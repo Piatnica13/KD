@@ -20,6 +20,8 @@ fsm = InMemoryFSMStorage()
 
 markup = MarkupService()
 
+print(bot.get_webhook_info())
+
 def start_bot(app: Flask) -> None:
     bot_service = BotService(bot=bot, app=app, fsm=fsm, ps=product_service, markup=markup)
 

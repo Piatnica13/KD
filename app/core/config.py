@@ -1,4 +1,8 @@
+from dotenv import load_dotenv
 import os
+
+
+load_dotenv(".password.env")
 
 class BaseConfig:
     SECRET_KEY = os.getenv("SECRET_KEY") or "dev-key"
@@ -12,4 +16,7 @@ class BaseConfig:
 
 class ProductionConfig(BaseConfig):
     DEBUG = False
-    SQLALCHEMY_DATABASE_URI = os.getenv("POSTGRESSQL") or "sqlite:///KD.db"
+    SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL")
+    
+    if not SQLALCHEMY_DATABASE_URI:
+        raise RuntimeError("DATABASE_URL is not set")
