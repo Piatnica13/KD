@@ -1,0 +1,364 @@
+#bodyBasket{
+    display: flex;
+    flex-direction: row;
+    max-width: 2000px;
+    width: 100%;
+}
+#basketLeft{
+    width: 60%;
+    margin: 0px 50px;
+    position: relative;
+}
+#basketRight{
+    transition: color 0.5s ease-in-out, background 0.5s ease-in-out;
+    margin: 0px 50px;
+    width: 40%;
+}
+#basket100px{
+    width: 100%;
+    height: 100px;
+    flex-shrink: 0;
+}
+#basketBasket{
+    position: relative;
+    min-height: 300px;
+}
+.basketProduct{
+    display: grid;
+    grid-template-columns: 57% 43%;
+    margin-bottom: 25px;
+    position: relative; 
+    flex-shrink: 1;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+.basketProduct:after{
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: var(--add-bg);
+    opacity: 0.8;
+    position: absolute;
+    bottom: -12.5px;
+}
+.basketProduct:before{
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: var(--add-bg);
+    opacity: 0.8;
+    position: absolute;
+    top: -12.5px;
+}
+.basketProductDescript{
+    display: flex;
+    flex-direction: column;
+}
+.basketCheckbox{
+    display: flex;
+    flex-direction: column;
+}
+.customCheckbox{
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    gap: 25px;
+} 
+.basketNoCheckboxImg{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 1.5rem;
+    margin-left: 25px;
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.basketNoCheckboxImg::-webkit-scrollbar {
+    width: 10px; /* Ширина вертикальной полосы */
+    height: 10px; /* Высота горизонтальной полосы */
+}
+/* Цвет фона полосы прокрутки */    
+.basketNoCheckboxImg::-webkit-scrollbar-track {
+    background: var(--main-bg); /* Цвет фона */
+}
+/* Цвет ползунка (скроллбара) */
+.basketNoCheckboxImg::-webkit-scrollbar-thumb {
+    background-color: var(--main-bg); 
+    border-radius: 6px; /* Закругление углов */
+    border: 2px solid var(--add-bg); /* Полоса вокруг ползунка */
+    transition: background-color ss ease-in-out;
+}
+/* Изменение цвета при наведении */
+.basketNoCheckboxImg::-webkit-scrollbar-thumb:hover {
+    background-color: var(--shadow); 
+}
+.productImgs{
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+}
+.productImg{
+    width: 50px;
+    z-index: 10;
+    cursor: pointer;
+    position: absolute;
+    transition: opacity 0s ease-in-out !important;
+}
+.basketproductImg{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#basketInputSert{
+    width: calc(100% - 31px);
+}
+.customCheckbox span{
+    width: 40px !important;
+    height: 40px !important;
+}
+.customCheckbox input[type="checkbox"]:checked + span::after {
+    font-size: 35px !important;
+}
+.basketproductImgs{
+    width: 100%; 
+    max-width: 250px; 
+    aspect-ratio: 1 / 1;
+}
+.basketFirstDiv{
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 20% 80%;
+    justify-content: center;
+}
+.basketDivLabel{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.productName{
+    font-size: 2rem;
+}
+.basketLabelPodImgs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+}
+.basketLike{
+    opacity: 0;
+}
+.basketNoLike{
+    opacity: 1;
+}
+.basketObertka3{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.basketObertka3::after{
+    content: "";
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
+    z-index: 100;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background-color: var(--main-bg);
+    pointer-events: none;
+    box-shadow: 0px 0px 25px 25px var(--main-bg),
+    inset 0px 0px 5px 1px var(--main-bg);
+    transition: color 0.5s ease-in-out, background 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+#basketWhatsAppBth{
+    width: 90%;
+    height: 25px;
+}
+#basketBhtWhatsAppDiv{
+    height: 30px;
+    width: 100%;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    margin-bottom: 25px;
+}
+.ProfilAddImgs{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    opacity: 0.5;
+    top: 5.5px;
+    left: 7.5px;
+}
+.ProfilAddDivInps{
+    position: relative;
+}
+@media screen and (max-width: 1450px) {
+    .productName{
+        font-size: 1.4rem;
+    }
+}
+@media screen and (max-width: 1300px) {
+    .basketObertka3::after{
+        width: 75%;
+        left: 12.5%;
+    }
+}
+@media screen and (max-width: 1250px) {
+    .productName{
+        font-size: 1.2rem;
+    }
+}
+@media screen and (max-width: 1100px) {
+    .basketObertka3::after{
+        content: "";
+        position: absolute;
+        bottom: 10px;
+        height: 10px;
+        box-shadow: 0px 0px 25px 25px var(--main-bg);
+    }
+}
+@media screen and (max-width: 1025px) {
+    #bodyBasket{
+        flex-direction: column;
+    }
+    #basketLeft{
+        width: calc(100% - 50px);
+        margin: 0px 25px;
+        position: relative;
+    }
+    #basketRight{
+        margin: 0px 25px;
+        width: calc(100% - 50px);
+    }
+    .basketProduct{
+        grid-template-columns: 40% 60%;
+        position: relative; 
+        height: 150px;
+        overflow-x: visible;
+    }
+    .basketProductDescript{
+        display: flex;
+        align-items: none;
+        justify-content: center;
+        flex-direction: row;
+        gap: 25px;
+    }
+    .basketProductDescriptions{
+        max-width: 150px;
+        flex-wrap: wrap;
+        font-size: 1rem;
+    }
+    .basketNoCheckboxImg{
+        text-align: center;
+        max-height: 140px;
+        margin-left: 10px;
+        overflow-x: auto;
+    }
+    .productName{
+        font-size: 1rem;
+    }
+    .productImg{
+        width: 25px;
+    }    
+    .customCheckbox span {
+        width: 20px !important;
+        height: 20px !important;
+        flex-shrink: 0;
+    }
+    .customCheckbox{
+        flex-direction: row;
+        grid-row: 2;
+        gap: 30px;
+        justify-content: center;
+
+    }
+    .basketproductImgs{
+        max-width: 120px;
+        display: flex;
+        justify-content: start;
+        aspect-ratio: 1 / 1;
+    }
+    .basketproductImg{
+        display: flex;
+        align-items: start;
+    }
+    .basketFirstDiv{
+        height: 150px;;
+        display: grid;
+        grid-template-rows: 80% 20%;
+        grid-template-columns: 100%;
+        justify-content: space-between;
+    }
+    .customCheckbox input[type="checkbox"]:checked + span::after {
+        font-size: 16px !important;
+    }
+    .basketDivLabel{
+        flex-direction: row;
+        grid-row: 2;
+        gap: 85px;
+        justify-content: center;
+        align-items: center;
+    }
+    .basketLabelPodImgs{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25px;
+        height: 25px;
+    }
+    .basketObertka3::after{
+        content: "";
+        position: absolute;
+        bottom: 5px;
+        width: 80%;
+        z-index: 100;
+        left: 10%;
+        right: 0;
+        height: 1px;
+        background-color: var(--main-bg);
+        pointer-events: none;
+        box-shadow: 0px 0px 20px 20px var(--main-bg),
+        inset 0px 0px 5px 1px var(--main-bg);
+    }
+    #basketWhatsAppBth{
+        width: 50%;
+    }
+    #basketBhtWhatsAppDiv{
+        justify-content: start;
+    }
+    #backetRightBottom{
+        flex-direction: row;
+    }
+}
+@media screen and (max-width: 700px) {
+    .basketProductDescript{
+        display: flex;
+        justify-content: none;
+        align-items: center;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .basketDivLabel{
+        gap: 50px;
+    }
+    #basketWhatsAppBth{
+        width: 90%;
+    }
+    
+    #basketBhtWhatsAppDiv{ 
+        justify-content: center;
+    }
+    
+    #backetRightBottom{
+        flex-direction: column;
+    }
+}

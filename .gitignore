@@ -1,0 +1,11 @@
+/.vscode
+*.db
+instance/
+logs/
+.idea/
+.password.env
+.plans.txt
+config.json
+__pycache__/
+*.рус
+.env

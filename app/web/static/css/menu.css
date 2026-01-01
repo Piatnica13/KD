@@ -1,0 +1,595 @@
+body{
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  background-color: var(--main-bg);
+}
+/*Манипуляции с меню*/
+#MenuFixed {
+  width: 100%;
+  position: fixed;
+  color: var(--main-bg);
+  z-index: 1001;
+  transform: translateY(-100%);
+  transition: transform 1s ease-in-out;
+  display: flex;
+  justify-content: center;
+  transition: all 0.2s ease-in-out, transform 1s ease-in-out, opacity 0.6s ease-in-out;
+  border-bottom: black 2px solid;  
+}
+#MenuFixed.visible {
+  transform: translateY(0);
+  opacity: 1; /* Показываем меню */
+}
+#MenuFixed.hidden {
+  transform: translateY(-165%);
+  opacity: 0; /* Прячем меню */
+}
+#PodBody{
+  flex: 1;
+  max-width: 2000px;
+  position: relative;
+}
+/*настройки под меню для телефонов*/
+#PodMenuPh{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: calc(20px + 100vh);
+  background-color: var(--main-bg);
+  top: -20px;
+  justify-content: center;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s linear, transform 0.3s linear;
+  transform: translateY(0px);
+  z-index: -1;
+  text-align: center;
+}
+#PodMenuPh.open{
+  transform: translateY(-40px);
+}
+.PodTextPh{
+  font-size: 2rem;
+  margin: 10px;
+  text-decoration: none;
+  color: var(--black);
+}
+.PodTextDiv{
+  margin: 10px;
+}
+
+/*настройки под меню*/
+#PodMenu{
+  background-color: var(--main-bg);
+  position: relative;
+  bottom: 0px;
+  height: 0px;
+  overflow: hidden; /* Скрытие содержимого при уменьшении высоты */
+  transition: all 0.3s ease-in-out, color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+  z-index: 1;
+  display: flex;
+}
+#PodLeft{
+  width: 330px;
+  margin-top: 10px;
+}
+#PodLeft::before {
+  content: "";
+  position: absolute;
+  top: 50%; /* Ставим в центр */
+  left: 330px;/* Привязываем к правой стороне */
+  transform: translateY(-50%); /* Смещаем вверх на половину высоты */
+  transition: background-color 0.5s ease-in-out;
+  width: 1px; /* Толщина борта */
+  height: 100%; /* Общая высота борта (50px вверх и 50px вниз от центра) */
+  background-color: var(--add-bg); /* Цвет борта */
+}
+.PodNazMenu{
+  width: 310px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.PodNazMenu:hover{
+  background-color: var(--add-bg);
+}
+.PodBox{
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+.PodText{
+  color: var(--black);
+  font-size: 20;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+}
+.Podimg{
+  width: 30px;
+  position: relative;
+  margin-right: 20px;
+  margin-left: 30px;
+}
+.Gimg{
+  width: 15px;
+  height: 17.5px;
+  position: relative;
+  transform: rotate(-90deg);
+}
+#spisokUl{
+  padding: 0px;
+  margin: 0px;
+}
+
+/*настройки меню*/
+#contenerMenu{
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-around; 
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  transition: all 0.2s ease-in-out;
+}
+#rihgt{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 223px;
+  height: 50px;
+}
+#left{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 223px;
+  height: 50px;
+  gap: 28px;
+}
+/*настройки иконок меню*/
+#strelka{
+  position: relative;
+  bottom: -1.3px;
+  transition: all 0.45s ease-in-out;
+  width: 15px;
+}
+
+#checkboxx:hover ~ #strelka{
+  scale: 1.15;
+}
+#divStrelka{
+  position: relative;
+  left: 23px;
+}
+#checkboxx{
+  position: absolute;
+  display: flex;
+  height: 26px;
+  width: 26px;
+  z-index: 5;
+  opacity: 0;
+  cursor: pointer;
+}
+#divStrelka input[type="checkbox"]:checked ~ #strelka{
+  transform: rotate(180deg);
+}
+.img{
+  width: 25px;
+  margin: 5px;
+  transition: all 0.45s ease-in-out !important;
+}
+#logo{
+  width: 160px;
+}
+nav ul li{
+  list-style: none;
+}
+#num{
+  color: var(--black);
+  font-size: 18;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  font-size: 23px;
+  position: relative;
+  left: 23px;
+  transition: color 0.5s ease-in-out, background 0.5s ease-in-out;
+}
+/*БУРГЕР МЕНЮ*/
+
+.nav-container .checkbox {
+  position: absolute;
+  top: 27.5px;
+  display: block;
+  align-items: center;
+  height: 42px;
+  width: 42px;
+  z-index: 5;
+  opacity: 0;
+  cursor: pointer;
+}
+.hamburger-lines {
+  display: block;
+  height: 29px;
+  width: 37.5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamburger-lines .line  {
+  display: block;
+  height: 3px;
+  width: 100%;
+  border-radius: 15px;
+  background: var(--black);
+}
+
+.nav-container .hamburger-lines .line1 {
+  transform-origin: 0% 0%;
+  transition: transform 0.4s ease-in-out, color 0.5s ease-in-out, background 0.5s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line2 {
+  transition: transform 0.2s ease-in-out, color 0.5s ease-in-out, background 0.5s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line3 {
+  transform-origin: 0% 100%;
+  transition: transform 0.4s ease-in-out, color 0.5s ease-in-out, background 0.5s ease-in-out;
+}
+/*выпадающее меню с номером*/
+#strelkaMenuOp{
+  position: absolute;
+  left: 8.2%;
+  transform: translateY(-20px);
+  width: 325px;
+  height: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  opacity: 0;
+  z-index: 5;
+  transition: opacity 0.45s ease, transform 0.45s ease, visibility 0.45s ease;
+  pointer-events: none;
+}
+#strelkaMenuOp.open{
+  opacity: 1;
+  transform:translateY(0);
+  position: absolute;
+  z-index: 5;
+  pointer-events: auto;
+  transition: opacity 0.45s ease, transform 0.45s ease, visibility 0.45s ease;
+}
+#strelkaMenu{
+  width: 210px;
+  background-color: var(--add-bg);
+  position: relative;
+  top: -35px;
+  left: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px 5px var(--grey);
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  transition: color 0.5s ease-in-out, background 0.5s ease-in-out;
+}
+#infoNum{
+  width: 205px;
+  display: flex;
+  flex-direction: column;
+}
+#Podnum{
+  font-size: 23px;
+  text-decoration: none;
+  color: var(--black);
+  font-family: Arial, Helvetica, sans-serif;
+  transition: color 0.5s ease-in-out, background 0.5s ease-in-out;
+}
+#NumPhone{
+  color: var(--black);
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  transition: color 0.5s ease-in-out, background 0.5s ease-in-out;
+}
+.imgPh{
+  width: 25px;
+}
+#treugol {
+  width: 0px;
+  height: 0px;
+  background-color: transparent;
+  border-left: 7.5px solid transparent;
+  border-right: 7.5px solid transparent;
+  border-bottom: 15px solid var(--add-bg);
+  border-radius: 0;
+  position: absolute;
+  left: 50%;
+  top: -15px;
+  z-index: 2;
+  transition: border-bottom-color 0.5s ease-in-out;
+}
+#PodRight{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  position: relative;
+  color: var(--black);
+  transition: color 0.5s ease-in-out, background 0.5s ease-in-out;
+
+}
+.PodRDivs{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1500px;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+.PodRTexts{
+  padding: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  text-align: center;
+}
+#PodRInstagram{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#izbranoe{
+  cursor: pointer;
+}
+#menuPlaseForPoisk{
+  width: 100%;
+  max-width: 1670px;
+  z-index: 10;
+  position: relative;
+  height: 100%;
+}
+#menuPoisk{
+  width: 85%;
+  height: 30px;
+  margin: 15px;
+  font-size: 20px;
+}
+#menuPoiskImg{
+  width: 22.5px;
+  margin: 21.5px;
+  position: absolute;
+}
+#poisk{
+  cursor: pointer;
+}
+.product-card{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-height: 566px;
+  transition: all 0.3s ease;  
+  color: var(--black);
+  transition: color 0.5s ease-in-out, background 0.5s ease-in-out;
+
+} 
+.product-imagee{
+  width: 125px;
+  aspect-ratio: 1 / 1;
+  background-color: var(--add-bg);
+  transition: color 0.5s ease-in-out, background 0.5s ease-in-out;
+  border-radius: 3px;
+}
+.Con2Icon{
+  width: 25px;
+  height: 25px;
+  position: relative;
+  top: 10px;
+}
+.BthInfo{
+  position: relative;
+  left: 5px;
+  transition: color 0.3s ease-in-out;
+}
+.DivInfo{
+  display: flex;
+  flex-direction: row;
+}
+.DivInfo:hover .BthInfo{
+  color: var(--shadow);
+}
+.test{
+  position: relative;
+}
+.product-title-menu{
+  height: 50px;
+  position: relative;
+  margin: 10px 0px 0px 0px;
+}
+#ProfilLeftFavorites{
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  width: 50%;
+}
+#prodilGridCard{
+  overflow-x: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+#menuPlaseForResult::-webkit-scrollbar {
+  width: 10px; /* Ширина вертикальной полосы */
+  height: 10px; /* Высота горизонтальной полосы */
+}
+/* Цвет фона полосы прокрутки */
+#menuPlaseForResult::-webkit-scrollbar-track {
+  background: var(--main-bg); /* Цвет фона */
+  transition: color 0.5s ease-in-out, background 0.5s ease-in-out;
+}
+/* Цвет ползунка (скроллбара) */
+#menuPlaseForResult::-webkit-scrollbar-thumb {
+  background-color: var(--add-bg); 
+  border-radius: 6px; /* Закругление углов */
+  border: 2px solid var(--main-bg); /* Полоса вокруг ползунка */
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+/* Изменение цвета при наведении */
+#menuPlaseForResult::-webkit-scrollbar-thumb:hover {
+  background-color: var(--border); 
+  transition: color 0.5s ease-in-out, background 0.5s ease-in-out;
+}
+.productImg1{
+  opacity: 1;
+  display: flex;
+}
+#menuPlaseForResult{
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  max-width: 87.5%;
+  overflow-x: auto;
+  margin-left: 20px;
+  height: 80%;
+  overflow-y:hidden;
+}
+#menuPlaseForResultt{
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  overflow-x: auto;
+  height: 80%;
+}
+#menuPlaseForPoiskk{
+  display: none;
+  flex-direction: column;
+  height: 500px;
+  align-items: center;
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+#menuPoiskImgg{
+  width: 22.5px;
+  margin: 0px;
+  position: absolute;
+  left: 2.5%;
+  top: 34px;
+}
+#menuPoiskk{
+  width: 90%;
+  height: 35px;
+  font-size: 20px;
+  margin: 25px 0;
+}
+@media screen and (min-width: 1920px) {
+  #contenerMenu{
+    width: 100%;
+  }
+  #rihgt, #left{
+    width: 300px;
+  }
+}
+@media screen and (max-width: 1366px){
+  #strelkaMenuOp{
+    left: 125px;
+  }
+  #strelkaMenuOp.open{
+    left: 125px;
+  }
+  #rihgt, #left{
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 1024px){
+  #strelkaMenuOp{
+    left: 100px;
+  }
+  #strelkaMenuOp.open{
+    left: 100px;
+  }
+  #left{
+    width: 223px;
+  }
+  #rihgt{
+    width: 223px;
+  }
+}
+@media screen and (max-width: 767px){
+  #contenerMenu{
+    height: 65px;
+  }
+  #logo{
+    width: 120px;
+  }
+  .product-imagee{
+    width: 200px;
+  }
+  #left{
+    width: 150px;
+  }
+  #rihgt{
+    width: 150px;
+  }
+  .hi{
+    display: none;
+  }
+  .img{
+    width: 35px;
+  }
+  .nav-container .checkbox {
+    position: absolute;
+    display: block;
+    height: 45px;
+    width: 45px;
+    top: 10px;
+    z-index: 5;
+    opacity: 0;
+    cursor: pointer;
+  }
+  .hamburger-lines {
+    display: block;
+    width: 37px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .hamburger-lines .line  {
+    display: block;
+    height: 2px;
+    width: 100%;
+    border-radius: 15px;
+    background: var(--black);
+  }
+  #PodMenu{
+    display: none;
+  }
+  #left{
+    gap: 0px;
+  }
+}
+@media screen and (max-width: 450px) {
+  #sumka{
+    display: none;
+  }
+  #rihgt, #left{
+    width: 60px;
+    gap: 0px;
+  }
+}

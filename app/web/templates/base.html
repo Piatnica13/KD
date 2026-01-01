@@ -1,0 +1,347 @@
+{% extends "baseAll.html" %} {% block titlee %} {% block style %} {% endblock %}
+<link
+  href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+  media="all"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="/static/css/base.css" media="all" />
+<link rel="stylesheet" href="/static/css/menu.css" media="all" />
+<link rel="stylesheet" href="/static/css/footer.css" media="all" />
+{% block title %} {% endblock %} {% endblock %} {% block bodyy %}
+
+<header>
+  <nav>
+    <div id="MenuFixed">
+      <div id="PodBody" aria-label="Main menu">
+        <section id="contenerMenu" aria-label="Pc menu">
+          <div id="rihgt">
+            <div id="menu" class="flex-item">
+              <div class="container nav-container">
+                <input
+                  class="checkbox"
+                  type="checkbox"
+                  name=""
+                  id="checkboxMain"
+                />
+                <div class="hamburger-lines" aria-label="Close menu">
+                  <span class="line line1" id="line1"></span>
+                  <span class="line line2" id="line2"></span>
+                  <span class="line line3" id="line3"></span>
+                </div>
+              </div>
+            </div>
+            <div id="number" class="flex-item hi">
+              <a style="cursor: pointer" id="num">700 336 00 24</a>
+            </div>
+            <div id="divStrelka" class="hi">
+              <input type="checkbox" id="checkboxx" />
+              <img
+                src="/static/icon/black/galochka.png"
+                alt="Phone Icon"
+                class="img"
+                id="strelka"
+                data-icon="galochka.png"
+              />
+            </div>
+          </div>
+          <div id="divLogo" role="banner" class="flex-item">
+            <a href="/">
+              <img
+                data-icon="logo.png"
+                src="/static/icon/white/logo.png"
+                alt="Kodee_Desire"
+                id="logo"
+              />
+            </a>
+          </div>
+          <div id="left">
+            <div id="poisk" class="flex-item">
+              <img
+                src="/static/icon/black/poisk.png"
+                alt="Search Icon"
+                class="img"
+                data-icon="poisk.png"
+              />
+            </div>
+            <div id="izbranoe" class="flex-item">
+              <img
+                src="/static/icon/black/like.png"
+                alt="Favorite Icon"
+                class="img"
+                id="sumka"
+                data-icon="like.png"
+              />
+            </div>
+            <div id="profil" class="flex-item">
+              <a href="/profil">
+                <img
+                  src="/static/icon/black/profil.png"
+                  alt="Profile Icon"
+                  class="img hi"
+                  data-icon="profil.png"
+                />
+              </a>
+            </div>
+            <div id="moiPokupki" class="flex-item">
+              <a href="/basket"
+                ><img
+                  src="/static/icon/black/sumka.png"
+                  alt="Purchases Icon"
+                  class="img hi"
+                  data-icon="sumka.png"
+              /></a>
+            </div>
+          </div>
+        </section>
+        <aside id="strelkaMenuOp">
+          <p id="treugol"></p>
+          <div id="strelkaMenu">
+            <article id="imgPhone">
+              <img
+                src="/static/icon/black/phone.png"
+                alt="Phone"
+                class="imgPh"
+                data-icon="phone.png"
+              />
+            </article>
+            <article id="infoNum">
+              <a href="tel:87003360024" id="Podnum">8 700 336 00 24</a>
+              <p id="NumPhone">Номер телефона</p>
+            </article>
+          </div>
+        </aside>
+        <section id="PodMenu" aria-label="Ph menu">
+          <article id="PodLeft">
+            <ul id="spisokUl">
+              <li>
+                <a href="/shop" class="PodText">
+                  <div class="PodNazMenu" id="DivBraslets">
+                    <div class="PodBox">
+                      <img
+                        src="/static/icon/black/products.png"
+                        alt=""
+                        class="Podimg"
+                        data-icon="products.png"
+                      />
+                      <p class="PodText">Каталог</p>
+                    </div>
+                    <img
+                      src="/static/icon/black/galochka.png"
+                      alt="Phone Icon"
+                      class="Gimg"
+                      data-icon="galochka.png"
+                    />
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                <a href="/contact" class="PodText">
+                  <div class="PodNazMenu" id="DivInstagram">
+                    <div class="PodBox">
+                      <img
+                        src="/static/icon/black/Instagram.png"
+                        alt=""
+                        class="Podimg"
+                        data-icon="Instagram.png"
+                      />
+                      <p class="PodText">Контакты</p>
+                    </div>
+                    <img
+                      src="/static/icon/black/galochka.png"
+                      alt="Открыть"
+                      class="Gimg"
+                      data-icon="galochka.png"
+                    />
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </article>
+          <article id="PodRight">
+            <form role="search" id="menuPlaseForPoisk">
+              <img
+                src="/static/icon/black/poisk.png"
+                alt="Изображения Поиска"
+                id="menuPoiskImg"
+              />
+              <input type="text" id="menuPoisk" />
+              <div id="menuPlaseForResult"></div>
+            </form>
+            <article id="PodRBraslets" class="PodRDivs">
+              <div class="PodRTexts">
+                <p>
+                  Браслеты Kodee – это не только украшения. Это ваше настроение,
+                  чувства и истории, которые вы будете рассказывать миру именно
+                  сегодня.
+                </p>
+              </div>
+            </article>
+            <article id="PodRInstagram" class="PodRDivs">
+              <div class="PodRTexts">
+                <p>Instagram, номер телефона</p>
+              </div>
+            </article>
+          </article>
+        </section>
+        <nav id="PodMenuPh">
+          <div style="flex-shrink: 0" id="menuHeightPh"></div>
+          <ul style="padding: 0">
+            <li class="PodTextDiv">
+              <a href="/" class="PodTextPh">Главная</a>
+            </li>
+            <li class="PodTextDiv">
+              <a href="/shop" class="PodTextPh">Каталог</a>
+            </li>
+            <li class="PodTextDiv">
+              <a href="/profil" class="PodTextPh">Профиль</a>
+            </li>
+            <li class="ProdTextDiv">
+              <a href="/basket" class="PodTextPh">Корзина</a>
+            </li>
+            <li class="PodTextDiv">
+              <a href="/contact" class="PodTextPh">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+        <section id="PodPoiskPh">
+          <div id="menuPlaseForPoiskk">
+            <img
+              src="/static/icon/black/poisk.png"
+              alt="Поиск"
+              id="menuPoiskImgg"
+            />
+            <input type="text" id="menuPoiskk" />
+            <div id="menuPlaseForResultt"></div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="Body">{% block body %} {% endblock %}</main>
+<footer
+  class="ContenerLast"
+  itemscope
+  itemtype="http://schema.org/LocalBusiness"
+>
+  <meta itemprop="name" content="KoDee Desire" />
+  <meta itemprop="image" content="/static/icon/black/logo.png" />
+  <div id="FuterConLast1">
+    <div class="FuterBlocks FuterBlockLogoMeseg">
+      <div
+        class="FuterCon1DivImg"
+        itemprop="logo"
+        itemscope
+        itemtype="https://schema.org/ImageObject"
+      >
+        <img
+          data-icon="logo.png"
+          src="/static/icon/white/logo.png"
+          alt="KoDee Desire - ювелирные изделия из золота 585 и серебра 925"
+          class="ConLastLogo"
+          itemprop="url"
+        />
+      </div>
+      <div class="MesegIcons">
+        <a
+          href="https://www.instagram.com/kodee_jewellery?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="FuterCon1DivsIcon">
+            <img
+              src="/static/icon/black/Instagram.png"
+              alt="Instagram"
+              class="ConLastMesegIcon"
+            />
+          </div>
+        </a>
+        <a
+          href="https://wa.me/77003360024"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <!--?text=Hi-->
+          <div class="FuterCon1DivsIcon">
+            <img
+              src="/static/icon/black/whatsapp.png"
+              alt="WhatsApp"
+              class="ConLastMesegIcon"
+            />
+          </div>
+        </a>
+        <a
+          href="https://t.me/+77003360024"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="FuterCon1DivsIcon">
+            <img
+              src="/static/icon/black/telegram.png"
+              alt="Telegram"
+              class="ConLastMesegIcon"
+            />
+          </div>
+        </a>
+        <a
+          href="https://kaspi.kz/shop/p/kodee-desire-g017-ves-0-54-g-zoloto-tekstil-bez-vstavok-110127325/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="FuterCon1DivsIcon">
+            <img
+              src="/static/icon/black/kaspi.png"
+              alt="Kaspi"
+              class="ConLastMesegIcon"
+            />
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="FuterBlocks FuterLineBord" id="FuterPodNavig">
+      <div class="FuterMarginAuto">
+        <div id="FooterDivImg">
+          <p class="LeftNa50px">Навигация</p>
+          <img
+            src="/static/icon/black/galochka.png"
+            data-icon="galochka.png"
+            id="Footerimg"
+          />
+        </div>
+        <nav class="FuterPodListBlocks LeftNa50px" id="FuterPodListBlockNavig">
+          <a href="/">Главная страница</a>
+          <a href="/shop">Каталог</a>
+          <a href="/profil">Профиль</a>
+          <a href="/login">Вход</a>
+          <a href="/contact">Контакты</a>
+          <a href="/help/primary">О нас / Справка</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <span style="position: absolute; bottom: 0px; right: 0px; font-size: 0.75rem"
+    >© KoDee Desire. Все права защищены.</span
+  >
+  <div
+    id="FooterOtherSpace"
+    style="display: none"
+    itemprop="address"
+    itemscope
+    itemtype="http://schema.org/PostalAddress"
+  >
+    <meta itemprop="streetAddress" content="ул. Муканова, 32" />
+    <meta itemprop="addressLocality" content="Караганда" />
+    <meta itemprop="addressCountry" content="Казахстан" />
+    <meta itemprop="telephone" content="+77003360024" />
+    <meta itemprop="openingHours" content="Mo-Su 06:00-22:00" />
+  </div>
+  <div id="FooterOtherSpace"></div>
+</footer>
+
+<script src="/static/js/menu.js" defer></script>
+<script src="/static/js/footer.js" defer></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="/static/js/base.js" defer></script>
+{% block script %} {% endblock %} {% endblock %}

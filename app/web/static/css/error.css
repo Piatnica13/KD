@@ -1,0 +1,53 @@
+:root {
+    /* Цветовая палитра для тёмной темы */
+        --main-bg: #2e2e2e; 
+        --add-bg: #3e3e3e;        
+        --black: #ffffff;         
+        --white: #ffffff;       
+        --grey: #999999;          
+        --border: #5a5a5a;        
+        --shadow: #1a1a1a;      
+        --gradient: linear-gradient(145deg, #383838, #2e2e2e);
+        --main-footer: #1c1c1c;  
+        --add-footer: #292929;    
+}
+body, html{
+    margin: 0px;
+    padding: 0px;
+    font-family:'Courier New', Courier, monospace;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    background-color: var(--main-bg);
+    color: var(--white);
+    transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+button{
+    transition: scale 0.2s linear, transform 0.1s linear, box-shadow 0.5s linear,
+    color 0.5s ease-in-out, background 0.5s ease-in-out;
+    box-shadow: 1px 3px var(--shadow);
+    border-radius: 999px;
+    border-style: none;
+    height: 25px;
+    background: var(--gradient);
+    color: var(--black)
+}
+button:hover{
+    scale: 1.015;
+}
+button:active{
+    transform: translateY(3px) translateX(1px);
+    box-shadow: none;
+}
+.error-page{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center  ;
+}

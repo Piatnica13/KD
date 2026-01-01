@@ -1,0 +1,84 @@
+{% extends "base.html" %} {% block title %}<title>
+  Каталог — KoDee Desire - БРАСЛЕТЫ ЖЕЛАНИЙ | ЗОЛОТО 585 ПРОБЫ | КОЛЬЕ НА ЛЕСКЕ
+  | КАРАГАНДА
+</title>
+
+<script type="application/ld+json">
+  {{ {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": products_json
+  }|tojson(indent=2) }}
+</script>
+
+{% endblock %} {% block style %}
+<link rel="stylesheet" href="/static/css/shop.css" />
+{% endblock %} {% block body %}
+<section id="Darker"></section>
+<section class="div100px"></section>
+<section id="BockMenu">
+  <div id="FilterHeight">
+    <div id="BockMenuTitle">
+      <h1>Фильтр</h1>
+      <div id="BockMenuDivImg">
+        <img
+          src="/static/icon/black/close.png"
+          alt="Выйти"
+          id="BockMenuTitleImg"
+          data-icon="close.png"
+        />
+      </div>
+    </div>
+    <div id="BockMenuMain"></div>
+    <div id="BockMenuDivFuter">
+      <h2 style="font-size: 1.3rem">Выбраны все товары</h2>
+      <div id="BockMenuDivButtons">
+        <div id="BockMenuBthSbros"><span>Сбросить</span></div>
+        <div id="BockMenuDivBthShow">
+          <span>Показать</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ShopBody">
+  <article id="PodShopBody">
+    <section class="Contener1">
+      <div class="Con1Text">
+        <h1 id="Con1GlText">Браслеты</h1>
+        <div class="Con1DivVtText">
+          <p id="Con1VtText">
+            <strong>Браслеты Kodee</strong> – это не только украшения. Это ваше
+            настроение, чувства и истории, которые вы будете рассказывать миру
+            именно&nbsp;сегодня. <br />
+            Наслаждайтесь вашей индивидуальностью.
+          </p>
+        </div>
+      </div>
+      <img
+        src="/static/image/imgShop/BrasletsAndEgg.webp"
+        class="imgs"
+        alt="Фото браслета Kodee"
+      />
+    </section>
+    <section id="TablMenu">
+      <div id="Divfiltr">
+        <img
+          src="/static/icon/black/control.png"
+          alt="Фильтры"
+          class="ShopImgControl"
+          data-icon="control.png"
+        />
+        <span>фильтры</span>
+      </div>
+    </section>
+    <section id="productGrid" name="ShopGrid"></section>
+    <section id="shopDivBthMore" data-aos="fade-up" data-aos-delay="0">
+      <button id="shopBthMore"><span>Еще</span></button>
+    </section>
+  </article>
+  {% endblock %} {% block script %}
+  <script src="/static/js/shop.js" defer></script>
+  {% endblock %}
+</section>

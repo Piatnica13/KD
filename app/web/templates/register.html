@@ -1,0 +1,108 @@
+{% extends "baseForReg.html" %} {% block title%}
+<title>
+  Регистрация — KoDee Desire - БРАСЛЕТЫ ЖЕЛАНИЙ | ЗОЛОТО 585 ПРОБЫ | КОЛЬЕ НА
+  ЛЕСКЕ | КАРАГАНДА
+</title>
+{% endblock %} {% block style %}
+<link rel="stylesheet" href="/static/css/register.css" />
+{% endblock %} {% block body %}
+
+<!-- Обработчик сообщений -->
+{% with messages = get_flashed_messages(with_categories=true) %} {% if messages
+%} {% for category, message in messages %}
+<div class="message-box">{{ message }}</div>
+{% endfor %} {% endif %} {% endwith %}
+
+<section id="Contener">
+  <div id="Forma">
+    <a href="/">
+      <div id="ImgLogo">
+        <img
+          src="/static/icon/black/logo.png"
+          data-icon="logo.png"
+          alt=""
+          id="Logo"
+        />
+      </div>
+    </a>
+    <article>
+      <h1 id="MainText">РЕГИСТРАЦИЯ</h1>
+    </article>
+    <form
+      method="post"
+      id="regForm"
+      action="/register/add_user"
+      autocomplete="on"
+    >
+      {{ form.hidden_tag() }}
+      <div id="UserInp">
+        <article class="ImgInp">
+          <img
+            src="/static/icon/black/accoutn-auth.png"
+            alt="Account Image"
+            class="ImgInInput"
+          />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            alt="Name"
+            placeholder="Имя"
+            autocomplete="username"
+            required
+          />
+        </article>
+        <article class="ImgInp">
+          <img
+            src="/static/icon/black/mail.png"
+            alt="Email"
+            class="ImgInInput"
+          />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="E-mail"
+            id="email"
+            autocomplete="email"
+            required
+          />
+        </article>
+        <article class="ImgInp">
+          <img
+            src="/static/icon/black/pass.png"
+            alt="Password"
+            class="ImgInInput"
+          />
+          <input
+            type="password"
+            autocomplete="password"
+            required
+            id="password"
+            name="password"
+            placeholder="Пароль"
+          />
+          <img
+            src="/static/icon/black/hide.png"
+            alt="Hide Password"
+            id="Hide"
+            class="ImgPass"
+          />
+          <img
+            src="/static/icon/black/show.png"
+            alt="Show Password"
+            id="Show"
+            class="ImgPass"
+          />
+        </article>
+        <button type="submit" id="ButtonSignIn">Регистрация</button>
+      </div>
+    </form>
+    <div>
+      <p id="regP">Уже есть аккаунт? <a href="/login" id="LogIn">Вход</a></p>
+    </div>
+  </div>
+</section>
+{% endblock %} {% block script %}
+<script src="/static/js/register.js"></script>
+{%endblock%}

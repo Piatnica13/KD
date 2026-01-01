@@ -1,0 +1,244 @@
+@font-face { 
+    font-family: "anastasiascripts"; 
+    src: url('/static/fonts/anastasiascriptc.otf') format('opentype'); 
+    font-weight: normal;
+}
+@font-face { 
+    font-family: "FranksRus-Regular";
+    src: url('/static/fonts/FranksRus-Regular_0.otf') format('opentype'); 
+    font-weight: normal;
+}
+@font-face {
+	font-family: 'Caviar Dreams';
+	src: url('../fonts/caviar_dreams.eot'); /* IE 9 Compatibility Mode */
+	src: url('../fonts/caviar_dreams.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+		url('../fonts/caviar_dreams.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../fonts/caviar_dreams.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+		url('../fonts/caviar_dreams.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('../fonts/caviar_dreams.svg#caviar_dreams') format('svg'); /* Chrome < 4, Legacy iOS */
+}
+@font-face {
+	font-family: 'Felidae-Regular';
+	src: url('../fonts/felidae-regular.eot'); /* IE 9 Compatibility Mode */
+	src: url('../fonts/felidae-regular.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+		url('../fonts/felidae-regular.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../fonts/felidae-regular.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+		url('../fonts/felidae-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('../fonts/felidae-regular.svg#felidae-regular') format('svg'); /* Chrome < 4, Legacy iOS */
+}
+
+body, html{
+    margin: 0px;
+    padding: 0px;
+    font-family: "FranksRus-Regular", sans-serif;
+    letter-spacing: 1px;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    background-color: var(--main-bg);
+    color: var(--white);
+    transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+html::-webkit-scrollbar {
+    width: 10px; /* Ширина вертикальной полосы */
+    height: 10px; /* Высота горизонтальной полосы */
+}
+/* Цвет фона полосы прокрутки */
+html::-webkit-scrollbar-track {
+    background: var(--main-bg); /* Цвет фона */
+}
+/* Цвет ползунка (скроллбара) */
+html::-webkit-scrollbar-thumb {
+    background-color: var(--add-bg); 
+    border-radius: 6px; /* Закругление углов */
+    border: 2px solid var(--main-bg); /* Полоса вокруг ползунка */
+    transition: background-color 0.2s ease-in-out;
+}
+/* Изменение цвета при наведении */
+html::-webkit-scrollbar-thumb:hover {
+    background-color: var(--border); 
+}
+button{
+    transition: scale 0.2s linear, transform 0.1s linear, box-shadow 0.5s linear,
+    color 0.5s ease-in-out, background 0.5s ease-in-out;
+    box-shadow: 1px 3px var(--shadow);
+    border-radius: 999px;
+    border-style: none;
+    height: 25px;
+    background: var(--gradient);
+    color: var(--black)
+}
+button:hover{
+    scale: 1.015;
+}
+button:active{
+    transform: translateY(3px) translateX(1px);
+    box-shadow: none;
+}
+input[type="text"], input[type="number"], input[type="password"], input[type="email"]{
+    width: calc(100% - 32px);
+    height: 25px;
+    border-radius: 999px;
+    border-width: 2px;
+    border-color: var(--border);
+    border-style:solid;
+    background-color: white;
+    transition: border 0.5s, box-shadow 0.5s;
+    padding-left: 30px;
+}
+input[type="text"]:focus{
+    border-color: var(--border);
+    box-shadow: 0 0 15px var(--shadow);
+    outline: none; /* Убирает стандартную рамку фокуса */
+}
+#Body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    opacity: 0;
+    align-items: center;
+    transition: opacity 1s ease-in-out;
+}
+.div100px{
+    width: 100%; 
+    height: 100px; 
+    flex-shrink: 0; 
+    position: relative; 
+    background: var(--main-bg);
+}
+p, a, div, article, img{
+    transition: background 0.5s ease-in-out, color 0.5s ease-in-out, border 0.5s ease-in-out, before 0.5s ease-in-out;
+}
+#menu-placeholder{
+    position: absolute;
+    top: 0px;
+    height: 100px;
+    width: 100%;
+}
+#futer-block{
+    position: relative;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+#divMessegeBox{
+    position: fixed;
+    top: 150px;
+    right: 50px;
+    z-index: 10;
+    width: 300px;
+    height: 150px;
+    display: none;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+.message{
+    width:300px;
+    height: 100px;
+    font-size: 20px;
+    margin:20px auto;
+    padding:30px;
+    position:fixed;
+    border-radius:5px;
+    right: 50px;
+    box-shadow:0 0 15px 5px var(--grey);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--border);
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.message-box{
+    display: none;
+}
+
+/* Стили контейнера */
+.customCheckbox {
+    width: 25px;
+    height: 25px;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Стили кастомного чекбокса */
+.customCheckbox span {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border); /* Красная рамка */
+    border-radius: 4px;    /* Закругленные углы (если нужно) */
+    background-color: transparent; /* Прозрачный фон */
+    display: inline-block;
+    position: relative;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+
+}
+
+/* Галочка при выборе */
+.customCheckbox input[type="checkbox"]:checked + span::after {
+    content: "✓"; /* Символ галочки */
+    color: var(--black); /* Черный цвет */
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Добавляем hover-эффект */
+.customCheckbox span:hover {
+    border-color: var(--shadow); /* Темно-красный цвет при наведении */
+}
+
+/*
+        <label class="customCheckbox">
+          <input type="checkbox" class="basketCheckbox">
+          <span></span>
+        </label>
+ */
+@media screen and (max-width: 1000px) {
+    #divMessegeBox{
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1002;
+        width: 100%;
+        height: auto;
+    }
+    .message{
+        height: auto;
+        box-sizing: border-box;
+        padding: 0;
+        right: 0;
+        margin: 20px;
+        padding: 20px;
+        width: calc(100% - 40px);
+    }
+    .close{
+        right:15px;
+        top:15px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .div100px{
+        height: 65px;
+    }
+}

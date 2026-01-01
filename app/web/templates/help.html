@@ -1,0 +1,32 @@
+{% extends "base.html" %} {% block title %}
+<title>
+  Справка — KoDee Desire - БРАСЛЕТЫ ЖЕЛАНИЙ | ЗОЛОТО 585 ПРОБЫ | КОЛЬЕ НА ЛЕСКЕ
+  | КАРАГАНДА
+</title>
+{% endblock title %}{% block style %}
+<link rel="stylesheet" href="/static/css/help.css" />
+{% endblock %}{% block body %}
+<div class="div100px"></div>
+
+<div id="bodyHelp">
+  <section id="helpAbout">
+    <h1 id="helpTitle">О нас</h1>
+    <p id="helpText">
+      <b><strong>KoDee</strong> Desire</b> — это больше, чем украшения. Мы
+      создаём кулоны желаний из золота и серебра, в которых сочетаются красота,
+      символизм и сила намерения. Каждый кулон — это личная история, маленькая
+      мечта, которую вы всегда носите с собой. <br />
+
+      Мы верим, что настоящее желание имеет силу, особенно когда оно запечатлено
+      в особом украшении. <br />
+
+      <b><strong>KoDee Desire</strong></b> — носите не просто кулон. Носите своё
+      желание.
+    </p>
+  </section>
+  <section id="HelpDiv"></section>
+</div>
+<input type="hidden" data-theme="{{ theme }}" id="helpTheme" />
+{% endblock %} {% block script %}
+<script src="/static/js/help.js"></script>
+{% endblock%}

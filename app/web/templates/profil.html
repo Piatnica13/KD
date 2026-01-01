@@ -1,0 +1,478 @@
+{% extends "base.html" %} {% block title %}
+<title>
+  Профиль — KoDee Desire - БРАСЛЕТЫ ЖЕЛАНИЙ | ЗОЛОТО 585 ПРОБЫ | КОЛЬЕ НА ЛЕСКЕ
+  | КАРАГАНДА
+</title>
+{% endblock %} {% block style %}
+<link rel="stylesheet" href="/static/css/profil.css" />
+{% endblock %} {% block body %}
+
+<section id="ProfilBody">
+  <div id="ProfilMain">
+    <section  class="div100px"></section>
+    <section id="ProfilTop">
+      <h1>Добро пожаловать</h1>
+    </section>
+    <section id="ProfilMenuBottom">
+      <div id="ProfilMenu">
+        <section id="ProfilMenuRight">
+          <article class="ProfilMenuItem Profillinia" id="ProdilMenuItemFavorites">
+            <img
+              src="/static/icon/black/like.png"
+              data-icon="like.png"
+              alt="Избранные товары"
+            />
+            <label for="Избранное" class="ProfilForPhone">Избранное</label>
+          </article>
+          <article class="ProfilMenuItem" id="ProfilMenuItemProfil">
+            <img
+              src="/static/icon/black/profil.png"
+              data-icon="profil.png"
+              alt="Профиль"
+            />
+            <label for="Профиль" class="ProfilForPhone">Профиль</label>
+          </article>
+          <article class="ProfilMenuItem ProfilMenuItemPass" id="ProfilEdit">
+            <img
+              src="/static/icon/black/pen.png"
+              data-icon="pen.png"
+              alt="Изменить профиль"
+            />
+            <label for="Изменить профиль" class="ProfilForPhone"
+              >Изменить профиль</label
+            >
+          </article>
+          {% if user.password %}
+          <article class="ProfilMenuItem" id="ProfilMenuItemPassword">
+            <img
+              src="/static/icon/black/rotation-lock.png"
+              alt="Изменить пароль"
+              data-icon="rotation-lock.png"
+            />
+            <label for="Изменить пароль" class="ProfilForPhone"
+              >Изменить пароль</label
+            >
+          </article>
+          {% else %}
+          <label id="profilNotUserPasswor"></label>
+          {% endif %}
+          <article class="ProfilMenuItem Profillinia" id="ProfilMenuItemAddress">
+            <img
+              src="/static/icon/black/tochka.png"
+              data-icon="tochka.png"
+              alt="Адрес"
+            />
+            <label for="Адрес" class="ProfilForPhone">Адрес доставки</label>
+          </article>
+          <a href="/logout">
+            <article class="ProfilMenuItem ProfilExit">
+              <img
+                src="/static/icon/black/logout.png"
+                class="ProfilInvisibolImg"
+                data-icon="logout.png"
+              />
+              <label for="Выход" class="ProfilForPhone"
+                >Выйти из аккаунта</label
+              >
+            </article>
+          </a>
+        </section>
+        <section id="ProfilMenuLeft">
+          <article id="ProfilLeftFavoritess" class="ProfilOb">
+            <div class="ProfilTitle">
+              <h1 class="ProfilHeaderText">Избранные товары</h1>
+            </div>
+            <div id="prodictObertka2">
+              <div id="prodilGridCardd">
+                {% if favorite_products == []%}
+                <div id="productNoProduct">
+                  <h1 style="font-size: 1.5em">Товары пока не добавлены</h1>
+                </div>
+                {% else %} {% for product in favorite_products %}
+                <a
+                  href="/product/{{product.slug}}"
+                  style="color: black; text-decoration: none"
+                >
+                  <div class="product-card">
+                    <div style="width: 250px; height: 250px">
+                      {% for image in product.images %}
+                      <img
+                        src="{{ image.img1 }}"
+                        class="productFotos productImg{{ image.num }}"
+                        alt="Продукция"
+                      />
+                      {% endfor %}
+                    </div>
+                    <p class="product-title">{{product.name}}</p>
+                    <div class="test">
+                      <p class="product-price">{{product.price}}&#8376;</p>
+                      <div class="DivInfo">
+                        <img
+                          src="/static/icon/black/sumka.png"
+                          class="Con2Icon"
+                          alt="Сумка"
+                          data-icon="sumka.png"
+                        />
+                        <p class="BthInfo"><ins><span>Подробнее</span></ins></p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                {% endfor %} {% endif %}
+              </div>
+            </div>
+          </article>
+          <article id="ProfilLeftProfil" class="ProfilOb">
+            <div id="ProfilLeftProfilTitle" class="ProfilTitle">
+              <h1 class="ProfilHeaderText">Профиль пользова&shy;теля</h1>
+            </div>
+            <div>
+              <div class="ProfilInfo" id="ProfilProfil">
+                <div class="ProfilEdit" id="ProfilEditt">
+                  <img
+                    src="/static/icon/black/pen.png"
+                    alt="Изменить профиль"
+                    data-icon="pen.png"
+                  />
+                  <label for="EditInfo">Изменить</label>
+                </div>
+                <div id="ProfilMainInfo" class="ProfilInfo">
+                  <label style="font-size: 30px; width: 100%"
+                    >Основные данные</label
+                  >
+                  <div id="ProfilNameAndSurename">
+                    <label for="NameSurename" class="labelForNameSurename"
+                      >Фамилия и имя</label
+                    ><br />
+                    <label
+                      for="userNameSurename"
+                      class="otherLabelForNameSurename"
+                      >{{user.last_name}} {{user.name}}</label
+                    >
+                  </div>
+                  <div id="ProfilEmail">
+                    <label for="NameSurename" class="labelForNameSurename"
+                      >Email</label
+                    ><br />
+                    <label
+                      for="userNameSurename"
+                      class="otherLabelForNameSurename"
+                      >{{user.email}}</label
+                    >
+                  </div>
+                  <div id="ProfilPhone">
+                    <label for="NameSurename" class="labelForNameSurename"
+                      >Телефон</label
+                    ><br />
+                    <label
+                      for="userNameSurename"
+                      class="otherLabelForNameSurename"
+                      >{{user.phone}}</label
+                    >
+                  </div>
+                  <div id="ProfilAdres">
+                    <label for="NameSurename" class="labelForNameSurename"
+                      >Адрес</label
+                    ><br />
+                    <label
+                      for="userNameSurename"
+                      class="otherLabelForNameSurename"
+                      >{{user.address}}</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+          {% if user.password %}
+          <article id="ProfilLeftChanchPass" class="ProfilOb">
+            <div class="ProfilTitle"><h1 class="ProfilHeaderText">Изменение пароля</h1></div>
+            <form id="ProfilMainPass" method="POST" action="/profil/update_password">
+              <input type="hidden" name="csrf_token" value="{{ formPass.csrf_token._value() }}">
+              <div id="ProfilInpsPass">
+                <div id="ProfilFInpPass" class="ProfilInpPass">
+                  <label for="" class="ProfilLabels">Новый пароль</label>
+                  <div>
+                    <img
+                      src="/static/icon/black/pass.png"
+                      class="ProfilImgsS"
+                      alt="Password"
+                    />
+                    <input
+                      type="password"
+                      name="newPass"
+                      class="ProfilTextInp"
+                    />
+                  </div>
+                </div>
+                <div id="ProfilSInpPass" class="ProfilInpPass">
+                  <label for="" class="ProfilLabels"
+                    >Подтверждение нового пароля</label
+                  >
+                  <div>
+                    <img
+                      src="/static/icon/black/pass.png"
+                      class="ProfilImgsS"
+                      alt=""
+                    />
+                    <input
+                      type="password"
+                      name="reNewPass"
+                      class="ProfilTextInp"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div id="ProfilBthPass">
+                <button
+                  type="submit"
+                  name="update_password"
+                  value="1"
+                  id="ProfilBth"
+                >
+                  Сохранить
+                </button>
+              </div>
+            </form>
+          </article>
+          {% endif %}
+          <article id="ProfilLeftChanchInfo" class="ProfilOb">
+            <div class="ProfilTitle"><h1 class="ProfilHeaderText">Изменение информации</h1></div>
+            <form id="ProfilSplit" method="post" action="/profil/update_user">
+              <input type="hidden" name="csrf_token" value="{{ formSplit.csrf_token._value() }}">
+              <div id="ProfilChangeInfoDivInp">
+                <div class="ProfilDivImgs">
+                  <img
+                    src="/static/icon/black/accoutn-auth.png"
+                    alt=""
+                    class="ProfilImgs"
+                  />
+                  <input
+                    name="name"
+                    type="text"
+                    placeholder="Имя"
+                    class="ProfilChangeInfoInp"
+                  />
+                </div>
+                <div class="ProfilDivImgs">
+                  <img
+                    src="/static/icon/black/accoutn-auth.png"
+                    alt=""
+                    class="ProfilImgs"
+                  />
+                  <input
+                    name="last_name"
+                    type="text"
+                    placeholder="Фамилия"
+                    class="ProfilChangeInfoInp"
+                  />
+                </div>
+                <div class="ProfilDivImgs">
+                  <img
+                    src="/static/icon/black/phone.png"
+                    id="ProfilImgPhone"
+                    alt="Номер телефона"
+                    class="ProfilImgs"
+                  />
+                  <input
+                    name="phone"
+                    type="number"
+                    placeholder="Телефон"
+                    class="ProfilChangeInfoInp"
+                  />
+                </div>
+                <div class="ProfilDivImgs">
+                  <img
+                    src="/static/icon/black/pass.png"
+                    alt="Емаил"
+                    class="ProfilImgs"
+                  />
+                  <input
+                    name="email"
+                    type="email"
+                    placeholder="Email"
+                    class="ProfilChangeInfoInp"
+                  />
+                </div>
+              </div>
+              <div id="ProfilChangeInfoDivButton">
+                <button
+                  id="ProfilChangeInfoButton"
+                  name="update_info"
+                  value="1"
+                  type="submit"
+                >
+                  <span>Сохранить</span>
+                </button>
+              </div>
+            </form>
+          </article>
+          <article id="ProfilLeftAddAddress">
+            <div class="ProfilTitle"><h1 class="ProfilHeaderText">Адреса доставки</h1></div>
+            <div id="ProfilObertka1">
+              <div id="PrfilMatch">
+                <div id="ProfilAddAdd">
+                  <button id="ProfilBthAddAdd"><span>Добавить</span></button>
+                </div>
+                <form id="ProfilAddMain" method="POST" action="/profil/change_address">
+                  <input type="hidden" name="csrf_token" value="{{ formAddress.csrf_token._value() }}">
+                  {% for address in user.addresses %}
+                  <div id="address-{{ address.id }}">
+                    <div id="ProfilAddDivMain">
+                      {% set full_address = "г." ~ address.city ~ " ул." ~
+                      address.street ~ " д." ~ address.home ~ " кв." ~
+                      address.flat %} {% set user_address = user.address.strip()
+                      if user.address else "" %} {% if full_address ==
+                      user_address %}
+                      <input
+                        type="radio"
+                        name="addresses"
+                        class="ProfilAddRadio"
+                        value="г.{{ address.city }} ул.{{ address.street }} д.{{
+                          address.home }} кв.{{ address.flat }}"
+                        onchange="ShowButton()"
+                        checked
+                      />
+                      {% else %}
+                      <input
+                        type="radio"
+                        name="addresses"
+                        class="ProfilAddRadio"
+                        value="г.{{ address.city }} ул.{{ address.street }} д.{{
+                          address.home }} кв.{{ address.flat }}"
+                        onchange="showButton()"
+                      />
+                      {% endif %}
+                      <span class="checkmark"></span>
+                      <div id="ProfilAddDiv">
+                        <label>{{ address.name }}</label><br />
+                        <label
+                          >г.{{ address.city }} ул.{{ address.street }} д.{{
+                          address.home }} кв.{{ address.flat }}</label
+                        >
+                      </div>
+                      <img
+                        src="/static/icon/black/delete.png"
+                        id="ProfilDelImgs"
+                        onclick="markForDeletion({{ address.id }})"
+                        data-icon="delete.png"
+                      />
+                    </div>
+                  </div>
+                  {% endfor %}
+                  <input
+                    type="hidden"
+                    name="deleted_addresses"
+                    id="deletedAddresses"
+                    value=""
+                  />
+                  <div id="ProfilDivButtonAdd">
+                    <button
+                      type="submit"
+                      id="ProfilButtonAdd"
+                      name="work_with_address"
+                      value="1"
+                    >
+                      <span>Сохранить</span>
+                    </button>
+                  </div>
+                </form>
+                <form id="ProfilAddSplit" action="/profil/add_address" method="POST">
+                  <input type="hidden" name="csrf_token" value="{{ formAdd.csrf_token._value() }}">
+                  <div id="ProfilAddInps">
+                    <div class="ProfilAddDivInps">
+                      <img
+                        src="/static/icon/black/tochka.png"
+                        class="ProfilAddImgs"
+                        alt="Имя"
+                      />
+                      <input
+                        type="text"
+                        placeholder="Название (можете видеть только вы)"
+                        class="ProfilAddInp"
+                        name="name"
+                        id="profilName"
+                      />
+                    </div>
+                    <div class="ProfilAddDivInps">
+                      <img
+                        src="/static/icon/black/tochka.png"
+                        class="ProfilAddImgs"
+                        alt="Город"
+                      />
+                      <input
+                        type="text"
+                        placeholder="Город"
+                        class="ProfilAddInp"
+                        name="city"
+                        id="profilCity"
+                      />
+                    </div>
+                    <div class="ProfilAddDivInps">
+                      <img
+                        src="/static/icon/black/tochka.png"
+                        class="ProfilAddImgs"
+                        alt="Улица"
+                      />
+                      <input
+                        type="text"
+                        placeholder="Улица"
+                        class="ProfilAddInp"
+                        name="street"
+                        id="profilStreet"
+                      />
+                    </div>
+                    <div class="ProfilAddDivInps">
+                      <img
+                        src="/static/icon/black/tochka.png"
+                        class="ProfilAddImgs"
+                        alt="Дом"
+                      />
+                      <input
+                        type="text"
+                        placeholder="Дом"
+                        class="ProfilAddInp"
+                        name="home"
+                        id="profilHome"
+                      />
+                    </div>
+                    <div class="ProfilAddDivInps">
+                      <img
+                        src="/static/icon/black/tochka.png"
+                        class="ProfilAddImgs"
+                        alt="Квартира"
+                      />
+                      <input
+                        type="text"
+                        placeholder="Квартира (не обязательно)"
+                        class="ProfilAddInp"
+                        name="flat"
+                        id="profilFlat"
+                      />
+                    </div>
+                  </div>
+                  <div id="ProfilAddDivBth">
+                    <button
+                      id="ProfilAddBth"
+                      value="1"
+                      type="submit"
+                    >
+                      <span>Добавить</span>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </article>
+        </section>
+      </div>
+    </div>
+  </section>
+  {% with messages = get_flashed_messages(with_categories=true) %} {% if
+  messages %} {% for category, message in messages %}
+  <div class="message-box {{ category }}">{{ message }}</div>
+  {% endfor %} {% endif %} {% endwith %}
+</section>
+{% endblock %} {% block script %}
+<script src="/static/js/profil.js"></script>
+{% endblock %}

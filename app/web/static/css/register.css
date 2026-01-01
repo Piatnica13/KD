@@ -1,0 +1,199 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    background: var(--main-bg);
+    color: var(--white);
+    transition: color 0.5s ease-in-out, background 0.5s ease-in-out;
+}
+#Contener{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+#Forma{
+    width: 330px;
+    height: 550px;
+    box-shadow: 0 0 250px white;
+    text-align: center;
+    padding: 4rem 2rem;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: opacity 0.25s ease-in-out;
+    background: var(--gradient-main);
+    opacity: 1;
+}
+#Forma.back{
+    opacity: 0;
+}
+#UserInp{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 30px;
+    padding-top: 20px;
+}
+#ImgLogo{
+    padding-top: 25px;
+}
+#Logo{
+    width: 200px;
+}
+#MainText{
+    background: var(--gradient-add);
+    background-clip: 0;
+    -webkit-background-clip: text; /* Применяем градиент к тексту */
+    -webkit-text-fill-color: transparent; /* Делаем текст прозрачным */
+    font-size: 40px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top:30px;
+    margin-bottom: 0px;
+}
+#regP{
+    padding-top: 50px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#LogIn{
+    color:rgb(172, 137, 255);
+}
+#regForm{
+    width: 100%;
+}
+/*hover, active*/
+#regForm input{
+    width: 100%;
+    height: 25px;
+    border-radius: 999px;
+    border-width: 2px;
+    border-color: var(--border);
+    border-style:solid;
+    background-color: white;
+    transition: border 0.5s, box-shadow 0.5s;
+    padding-left: 30px;
+}
+#regForm input:focus{
+    border-color: var(--border);
+    box-shadow: 0 0 15px var(--shadow);
+    outline: none; /* Убирает стандартную рамку фокуса */
+}
+#regForm button{
+    transition: scale 0.2s linear, transform 0.1s linear, box-shadow 0.1s linear;
+    box-shadow: 1px 3px var(--shadow);
+    border-radius: 999px;
+    border-style: none;
+    height: 25px;
+    color: var(--white);
+    background: var(--gradient);
+}
+.ImgInInput{
+    width: 20px;
+    position: absolute;
+    left: 7px;
+    opacity: 0.5;
+}
+.ImgInp{
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+    align-items: center;
+    position: relative;
+}
+.ImgPass{
+    opacity: 0 !important;
+    width: 20px;
+    position: absolute;
+    top: 20%;
+    right: 3%;
+    cursor: pointer;
+    transition: opacity 0.2s linear;
+}
+.loginError{
+    border-color: red;
+    background-color: rgb(255, 122, 122);
+    box-shadow: 0 0 15px rgba(255, 0, 85, 0.826);
+}
+#regForm button:hover{
+    scale: 1.015;
+}
+#regForm button:active{
+    transform: translateY(3px) translateX(1px);
+    box-shadow: none;
+}
+
+#divMessegeBox{
+    position: fixed;
+    top: 150px;
+    right: 50px;
+    z-index: 10;
+    width: 300px;
+    height: 150px;
+    display: none;
+}
+.message{
+    width:300px;
+    height: 100px;
+    font-size: 20px;
+    margin:20px auto;
+    padding:30px;
+    position:fixed;
+    border-radius:5px;
+    right: 50px;
+    box-shadow:0 0 15px 5px var(--grey);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--border);
+    transition: background 0.5s ease-in-out;
+}
+
+.message-box{
+    display: none;
+}
+
+
+@media screen and (max-width: 1000px) {
+    #divMessegeBox{
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1002;
+        width: 100%;
+        height: auto;
+    }
+    .message{
+        height: auto;
+        box-sizing: border-box;
+        padding: 0;
+        right: 0;
+        margin: 20px;
+        padding: 20px;
+        width: calc(100% - 40px);
+    }
+    .close{
+        right:15px;
+        top:15px;
+    }
+}
+@media screen and (max-width: 787px) {
+    #Contener{
+        align-items: start;
+        position: relative;
+    }
+    #Forma{
+        height: 100%;
+        width: 100vh;
+        padding: 0rem 0rem;
+        border-radius: 0px;
+    }
+}
+@media screen and (max-height: 565px) {
+    #Contener{
+        height: 100%;
+    }
+}

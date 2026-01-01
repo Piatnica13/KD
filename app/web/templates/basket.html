@@ -1,0 +1,220 @@
+{% extends "base.html" %} {% block title%}
+<title>
+  Корзина — KoDee Desire - БРАСЛЕТЫ ЖЕЛАНИЙ | ЗОЛОТО 585 ПРОБЫ | КОЛЬЕ НА ЛЕСКЕ
+  | КАРАГАНДА
+</title>
+{% endblock %} {% block style %}
+<link rel="stylesheet" href="/static/css/basket.css" />
+{% endblock style %} {% block body %}
+<section class="div100px"></section>
+<section id="bodyBasket">
+  <section id="basketLeft">
+    <div id="basketBasket">
+      <h1 style="font-size: 2rem">Корзина</h1>
+      {% if basket != []%} {% for product in basket %}
+      <article class="basketProduct" id="card-{{product.id}}">
+        <section class="basketFirstDiv">
+          <article class="basketDivLabel">
+            <label class="basketCheckbox customCheckbox">
+              <input
+                type="checkbox"
+                data-id="{{product.id}}"
+                class="basketcheckboxItem"
+              />
+              <span></span>
+            </label>
+            <div class="basketLabelPodImgs">
+              <img
+                src="/static/icon/black/blackHeart.png"
+                class="productImg basketNoLike"
+                id="basketNoLike{{product.id}}"
+                alt="Поставить лайк"
+                data-id="{{ product.id }}"
+                data-icon="blackHeart.png"
+              />
+              <img
+                src="/static/icon/black/heart.png"
+                class="productImg basketLike"
+                alt="Лайк"
+                data-id="{{product.id}}"
+                id="basketLike{{product.id}}"
+                data-icon="heart.png"
+              />
+            </div>
+            <img
+              src="/static/icon/black/delete.png"
+              class="productImg basketDelete"
+              alt=""
+              data-id="{{product.id}}"
+              id="basketDelete{{product.id}}"
+              data-icon="delete.png"
+            />
+          </article>
+          <a class="basketproductImg" href="product/{{ product.slug }}">
+            <img
+              src="/static/image/productImgs/{{ product.slug }}/img1.webp"
+              class="basketproductImgs"
+              alt="Продукция"
+            />
+          </a>
+          <input
+            type="hidden"
+            id="basketFavoriteProduct"
+            value="{{ user.favourites }}"
+          />
+        </section>
+        <section class="basketObertka3">
+          <div class="basketNoCheckboxImg">
+            <h3 class="productName" style="margin: 0px">{{ product.name }}</h3>
+            <div class="basketProductDescript">
+              {%for desc in user.basket %} {%if product.id == desc[0] %}
+              <div class="basketProductDescriptions">
+                <b>Цена</b> <br />
+                {{ product.price }}&#8376;
+              </div>
+              <div class="basketProductDescriptions basketColor">
+                <b>Цвет нити</b> <br />
+                {{ desc[1] }}
+              </div>
+              <div class="basketProductDescriptions basketSize">
+                <b>Размер</b> <br />{{ desc[2] }}
+              </div>
+              <div class="basketProductDescriptions basketmaterial">
+                <b>Материал</b> <br />
+                {{ desc[3] }}
+              </div>
+              {% endif %} {% endfor %}
+            </div>
+          </div>
+        </section>
+      </article>
+      {% endfor %} {% else %}
+      <div style="font-size: 1.5rem"><h2>Товары пока не добавлены</h2></div>
+      {% endif %}
+    </div>
+  </section>
+  <section id="basketRight">
+    <article id="basketProductsPay">
+      <h2 style="font-size: 2rem">Товары</h2>
+    </article>
+    <article id="basketPay"></article>
+    <article id="basketBhtWhatsAppDiv">
+      <button type="button" id="basketWhatsAppBth">
+        <span>Оформить через WhatsApp</span>
+      </button>
+    </article>
+    <form method="POST" id="ProfilAddSplit">
+      {{ form.hidden_tag() }}
+      <div
+        style="
+          text-align: center;
+          font-size: 2rem;
+          width: 100%;
+          margin: 25px 0 10px;
+        "
+      >
+        <h2 style="font-size: 2rem">Добавить адрес</h2>
+      </div>
+      <div
+        id="ProfilAddInps"
+        style="display: flex; flex-direction: column; gap: 10px"
+      >
+        <div class="ProfilAddDivInps">
+          <img
+            src="/static/icon/black/tochka.png"
+            class="ProfilAddImgs"
+            alt="Имя"
+          />
+          <input
+            type="text"
+            placeholder="Название (можете видеть только вы)"
+            class="ProfilAddInp"
+            name="name"
+            id="basketName"
+          />
+        </div>
+        <div class="ProfilAddDivInps">
+          <img
+            src="/static/icon/black/tochka.png"
+            class="ProfilAddImgs"
+            alt="Город"
+          />
+          <input
+            type="text"
+            placeholder="Город"
+            class="ProfilAddInp"
+            name="city"
+            id="basketCity"
+          />
+        </div>
+        <div class="ProfilAddDivInps">
+          <img
+            src="/static/icon/black/tochka.png"
+            class="ProfilAddImgs"
+            alt="Улица"
+          />
+          <input
+            type="text"
+            placeholder="Улица"
+            class="ProfilAddInp"
+            name="street"
+            id="basketStreet"
+          />
+        </div>
+        <div class="ProfilAddDivInps">
+          <img
+            src="/static/icon/black/tochka.png"
+            class="ProfilAddImgs"
+            alt="Дом"
+          />
+          <input
+            type="text"
+            placeholder="Дом"
+            class="ProfilAddInp"
+            name="home"
+            id="basketHome"
+          />
+        </div>
+        <div class="ProfilAddDivInps">
+          <img
+            src="/static/icon/black/tochka.png"
+            class="ProfilAddImgs"
+            alt="Квартира"
+          />
+          <input
+            type="text"
+            placeholder="Квартира (не обязательно)"
+            class="ProfilAddInp"
+            name="flat"
+            id="basketFlat"
+          />
+        </div>
+      </div>
+      <div
+        id="ProfilAddDivBth"
+        style="
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          margin: 10px 0;
+        "
+      >
+        <meta name="csrf_token" content="{{ csrf_token() }}" />
+        <button
+          id="ProfilAddBth"
+          name="add_address"
+          value="1"
+          type="button"
+          style="width: 90%"
+        >
+          <span>Добавить</span>
+        </button>
+      </div>
+    </form>
+  </section>
+</section>
+<input type="hidden" value="{{ user.name }}" id="basketNamehidden" />
+<input type="hidden" value="{{user.address}}" id="basketAddress" />
+{% endblock body %} {% block script %}
+<script src="/static/js/basket.js" defer></script>
+{% endblock script %}

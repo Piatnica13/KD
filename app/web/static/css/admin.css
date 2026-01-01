@@ -1,0 +1,61 @@
+#Px100bottom{
+    width: 100%;
+    height: 100px;
+}
+#Body{
+    padding: 0 5px 30px;
+    width: auto !important;
+    align-items: start !important;
+}
+input[type="file"]{
+    opacity: 1;
+    z-index: 0;
+    position: absolute;
+    bottom: 10px;
+    left: 88px;
+    width: 250px;
+    height: 15px;
+}
+input[type="text"]{
+    max-width: 300px;
+}
+#product_form{
+    width: 50%;
+
+}
+#prodcutUploadDiv{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+label{
+    display: flex;
+    cursor: pointer;
+    width: 200px;
+    height: 20px;
+    background-color: var(--add-bg);
+    margin: 5px;
+    border-radius: 5px;
+    z-index: 2;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.productUploadDivs{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+}
+#adminAddImgsBth{
+    position: absolute;
+    left: 105px;
+}
+@media screen and (max-width: 540px){
+    #product_form{
+        width: 100%;
+    }
+}

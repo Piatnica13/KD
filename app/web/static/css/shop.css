@@ -1,0 +1,376 @@
+#ShopBody{
+    position: relative;
+    width: 100%;
+    opacity: 1; 
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#futer-block{
+    width: 100%;
+}
+
+#PodShopBody{
+    max-width: 2000px;
+}
+
+#productGrid{
+    max-width: 2000px;
+    display: grid;
+    grid-template-columns: repeat(4, 16.66%);
+    position: relative;
+    justify-content: center;
+    gap: 25px;
+    transition: grid-template-columns 0.3s ease, justify-content 0.3s ease;
+}
+.product-card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-height: 566px;
+    transition: all 0.3s ease;  
+    font-family: "Caviar Dreams", sans-serif;
+} 
+.product-image{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    background-color: var(--add-bg);
+    border-radius: 3px;
+}
+.imgs{
+    width: 100vw;
+    max-width: 2000px;
+    height: auto;
+    position: relative;
+    z-index: 10;
+}
+.Contener1{
+    max-width: 2000px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+.Con1Text{
+    position: absolute;
+    width: 50%;
+    max-width: 1000px;
+    text-align: center;
+    z-index: 11;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: black;
+    font-family: "anastasiascripts", sans-serif;
+}
+#Con1GlText{
+    font-size: 2rem;
+    margin: 0px;
+}
+.Con1DivVtText{
+    max-width: 450px;
+}
+#Con1VtText{
+    font-size: 1.5rem;
+    margin: 0px;
+
+}
+.Con2Icon{
+    width: 25px;
+    height: 25px;
+    position: relative;
+    top: 10px;
+}
+.BthInfo{
+    position: relative;
+    left: 5px;
+    transition: color 0.3s ease-in-out;
+}
+.DivInfo{
+    display: flex;
+    flex-direction: row;
+}
+.DivInfo:hover .BthInfo{
+    color: var(--shadow);
+}
+#TablMenu{
+    max-width: 2000px;
+    height: 50px;
+    margin: 20px 0px;
+    border: 1px var(--add-bg) solid;
+    display: grid;
+    grid-template-columns: repeat(4, 16.66%);
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+.ShopImgControl{
+    width: 30px;
+    height: 30px;
+}
+#Divfiltr{
+    color: var(--black);
+    width: 150px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    position: relative;
+    cursor: pointer;
+    text-decoration: underline var(--shadow);
+    height: 35px;
+    transition: color 0.2s ease-in-out, text-decoration 0.5s ease-in-out;
+}
+#Divfiltr:hover{
+    color: var(--shadow);
+}
+.test{
+    position: relative;
+}
+.product-title{
+    height: 100px;
+    display: flex;
+    overflow-wrap: anywhere;
+    overflow-y: auto;
+    position: relative;
+    margin: 10px 0px 0px 0px;
+}
+
+/*Настройки боковой панели*/
+#BockMenu{
+    width: 25%;
+    min-width: 500px;
+    max-width: 750px;
+    height: 100%;
+    left: 0;
+    background-color: transparent;
+    opacity: 0;
+    padding: 30px 41px;
+    position: fixed; 
+    top: 0;
+    transform: translateX(-1000px);
+    z-index: 1001;
+    background-color: var(--main-bg);
+    box-sizing: border-box;
+    transition: transform 1s ease-in-out, opacity 0.8s ease-in-out;
+}
+#BockMenuTitle{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+}
+#BockMenuDivImg{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+#BockMenuTitleImg{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+#BockMenuMain{
+    position: relative;
+    width: 100%;
+    flex: 1;
+    overflow: auto;
+}
+#BockMenuMain::-webkit-scrollbar {
+    width: 10px; /* Ширина вертикальной полосы */
+    height: 10px; /* Высота горизонтальной полосы */
+}
+/* Цвет фона полосы прокрутки */
+#BockMenuMain::-webkit-scrollbar-track {
+    background: var(--main-bg); /* Цвет фона */
+}
+/* Цвет ползунка (скроллбара) */
+#BockMenuMain::-webkit-scrollbar-thumb {
+    background-color: var(--main-bg); 
+    border-radius: 6px; /* Закругление углов */
+    border: 2px solid var(--main-bg); /* Полоса вокруг ползунка */
+    transition: background-color 0.2s ease-in-out;
+}
+/* Изменение цвета при наведении */
+#BockMenuMain::-webkit-scrollbar-thumb:hover {
+    background-color: var(--shadow); 
+}
+#BockMenuDivFuter::after{
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background-color: var(--main-bg);
+    pointer-events: none;
+    box-shadow: 0px 0px 25px 25px var(--main-bg),
+    inset 0px 0px 15px 1px var(--main-bg);
+}
+#BockMenuDivFuter{
+    position: relative;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.4rem;
+    margin: 30px 0px;
+}
+#BockMenuDivButtons{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.2rem;
+    flex: 1;
+}
+#BockMenuDivBthShow{
+    background-color: var(--shadow);
+    padding: 20px 30px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#BockMenuDivBthShow p{
+    margin: 0px;
+}
+#BockMenuBthSbros{
+    cursor: pointer;
+    color: var(--black);
+    text-decoration:underline var(--shadow);
+    padding: 20px 30px;
+}
+#Darker{
+    position: fixed; /* Фиксированное положение */
+    top: 0;
+    left: 0;
+    width: 100%; /* Полная ширина экрана */
+    height: 100%; /* Полная высота экрана */
+    background: rgba(0, 0, 0, 0); /* Полупрозрачное затемнение */
+    transition: background 0.4s ease-in-out;
+    z-index: 1000; /* Высокий z-index для перекрытия */
+    pointer-events: none; /* Отключение взаимодействия */
+}
+#FilterHeight{
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение */
+    height: 100vh; /* Занимает всю высоту экрана */
+}
+/*Фильтры*/
+.ShopDivFilters{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.ShopDivFilters ul{
+    list-style-type: none;    
+}
+.ShopFiltersTitle{
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+.ShopFiltersTitle::before{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.ShopFiltersDivSpisok{
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    display: flex;
+    overflow: hidden; /* Скрывает содержимое, выходящее за пределы блока */
+    height: 0px; /* Начальная высота */
+    transition: height 0.5s ease-in-out;
+    padding: 0px;
+    position: relative;
+}
+.ShopFiltersPodSpisok {
+    font-size: 1.4rem;
+}
+.ShopFiltersItems{
+    position: relative;
+    top: -5px;
+}
+
+#shopDivBthMore{
+    margin: 50px 0 25px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#shopBthMore{
+    width: 100px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 20px;
+    opacity: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+#Shop100px{
+    height: 0;
+    width: 100%;
+}
+@media screen and (max-height: 920px) {
+    #ShopBody{
+        position: relative;
+        width: 100vw;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        top: 0px;
+    }
+}
+@media screen and (max-width: 1000px) {
+    #Shop100px{
+        height: 100px;
+        flex-shrink: 0;
+    }
+}
+@media screen and (max-width: 767px) {
+    #productGrid{
+        grid-template-columns: repeat(3, 30%);
+        justify-content: center;
+        position: relative;
+    }
+    #BockMenu{
+        min-width: 0px;
+        width: 100%;
+        padding: 20px;
+    }
+    #BockMenuDivBthShow{
+        padding: 20px 10px;
+    }
+    #BockMenuBthSbros{
+        padding: 20px 10px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .imgs{
+        display: none;
+    }
+    .Con1Text{
+        color: var(--white);
+        position: relative;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 500px) {
+    #productGrid{
+        grid-template-columns: repeat(2, 45%);
+        justify-content: center;
+        column-gap: 25px;
+    }
+}

@@ -1,0 +1,756 @@
+#Px100bottom{
+    width: 100%;
+    height: 100px;
+}
+#ProfilBody{
+    position: relative;
+    width: 100vw;
+    height: calc(100% - 230px);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+#ProfilMain{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+#ProfilTop{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--add-bg);
+}
+#ProfilTop h1{
+    font-size: 1.6rem;
+}
+#ProfilMenuBottom{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#ProfilMenu{
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    max-width: 2000px;
+    display: grid;
+    grid-template-columns: 31.5% 60%;
+    flex-direction: row;
+}
+#ProfilMenuRight{
+    height: auto;
+    position: relative;
+}
+#ProfilMenuRight::before{
+    content: "";
+    position: absolute;
+    right: 0px;
+    width: 1px;
+    height: 85%;
+    transform: translateY(14%);
+    background-color: rgb(0, 0, 0, 0.3);
+}
+#ProfilMenuRight a{
+    text-decoration: none;
+    color: var(--black);
+}
+.ProfilMenuItem{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    width: 80%;
+    position: relative;
+    padding: 15px 0px;
+    margin: 15px 0px;
+    cursor: pointer;
+}
+.ProfilMenuItem img{
+    width: 33px;
+    height: 33px;
+}
+.ProfilMenuItem label{
+    font-size: 1.35rem;
+    cursor: pointer;
+}
+.Profillinia::before{
+    content: "";
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    background-color: rgb(0, 0, 0, 0.3);
+    bottom: 0px;
+    left: 0px;
+}
+.ProfilExit label{
+    font-size: 1.6rem;
+}
+.ProfilTitle{
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.ProfilHeaderText{
+    font-size: 1.8rem;
+}
+#ProfilMenuLeft{
+    position: relative;
+    margin: 0px 30px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+}
+#ProfilMenuLeft::-webkit-scrollbar {
+    width: 10px; /* Ширина вертикальной полосы */
+    height: 10px; /* Высота горизонтальной полосы */
+}
+/* Цвет фона полосы прокрутки */
+#ProfilMenuLeft::-webkit-scrollbar-track {
+    background: var(--main-bg); /* Цвет фона */
+}
+/* Цвет ползунка (скроллбара) */
+#ProfilMenuLeft::-webkit-scrollbar-thumb {
+    background-color: var(--add-bg); 
+    border-radius: 6px; /* Закругление углов */
+    border: 2px solid var(--main-bg); /* Полоса вокруг ползунка */
+    transition: background-color 0.2s ease-in-out;
+}
+/* Изменение цвета при наведении */
+#ProfilMenuLeft::-webkit-scrollbar-thumb:hover {
+    background-color: var(--border); 
+}
+#ProfilLeftProfil{
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    max-height: 483px;
+    overflow-y: auto;
+    width: 100%;
+    height: auto;
+    transition: opacity 0.5s ease-in-out;
+}
+.ProfilInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    position: relative;
+}
+#ProfilProfil{
+    gap: 0px
+}
+#ProfilNameAndSurename{
+    width: 100%;
+}
+.ProfilEdit{
+    position: absolute;
+    right: 0px;
+    top: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 10;
+}
+.ProfilEdit label{
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--black);
+    transition: color 0.3s ease-in-out;
+    text-decoration: underline var(--black) 1px;
+}
+.ProfilEdit:hover label{
+    color: var(--shadow);
+}
+.ProfilEdit img{
+    width: 20px;
+    height: 20px;
+}
+
+
+#ProfilLeftChanchInfo{
+    width: 100%;
+    opacity: 0;
+    position: absolute;
+    display: none;
+    transition: opacity 0.5s ease-in-out;
+}
+#ProfilChangeInfoDivInp{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.ProfilChangeInfoInp{
+    height: 40px;
+    width: 80%;
+    font-size: 20px;
+}
+#ProfilSplit{
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+#ProfilChangeInfoDivButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#ProfilChangeInfoButton{
+    width: 200px;
+    height: 100px;
+    font-size: 2rem;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #ffd0d9;
+    border: none;
+    transition: scale 0.2s;
+    margin-left: 25px;
+}
+#ProfilChangeInfoButton:hover{
+    scale: 1.02;
+}
+#ProfilChangeInfoButton:active{
+    scale: 0.98;
+}
+.ProfilImgs{
+    width: 20px;
+    position: absolute;
+    left: 8px;
+    top: 5px;
+    opacity: 0.5;
+}
+.ProfilDivImgs{
+    position: relative;
+}
+#ProfilImgPhone{
+    top: 6px;
+}
+
+.labelForNameSurename{
+    font-size: 25px;
+}
+.otherLabelForNameSurename{
+    font-size: 18px;
+    overflow-wrap:  break-word;
+}
+
+#ProfilLeftChanchPass{
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: none;
+    flex-direction: column;
+    width: 75%;
+    justify-content: center;
+    align-items: center;
+}
+#ProfilMainPass{
+    height: 300px;
+    display: grid;
+    grid-template-rows: 50% 50%;
+    justify-content: center;
+}
+#ProfilInpsPass{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+.ProfilInpPass{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.ProfilTextInp{
+    height: 40px;
+    font-size: 20px;
+}
+#ProfilBthPass{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+#ProfilBth{
+    width: 150px;
+    height: 75px;
+    font-size: 17.5px;
+}
+.ProfilLabels{
+    text-align: center;
+    font-size: 17.5px;
+    height: 25px;
+}
+.ProfilImgsS{
+    width: 22.5px;
+    position: absolute;
+    left: 8.5px;
+    bottom: 4px;
+    opacity: 0.5;
+}
+
+
+#ProfilLeftAddAddress{
+    width: 100%;
+    opacity: 0;
+    position: absolute;
+    display: none;
+    transition: opacity 0.5s ease-in-out;
+    flex-direction: column;
+}
+#ProfilAddInps{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 15px 15px 15px 15px;
+}
+.ProfilAddInp{
+    height: 40px;
+    width: 80%;
+    font-size: 20px;
+}
+#ProfilAddSplit{
+    display: none;
+    grid-template-columns: 70% 30%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+#ProfilObertka1{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#ProfilAddDiv label{
+    overflow-wrap:  break-word;
+    width: 90%;
+    display: block;
+}
+#ProfilAddDivBth{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+#ProfilAddBth{
+    width: 200px;
+    height: 100px;
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--add-bg);
+    border: none;
+    transition: scale 0.2s;
+}
+#ProfilAddBth:hover{
+    scale: 1.02;
+}
+#ProfilAddBth:active{
+    scale: 0.98;
+}
+.ProfilAddImgs{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    opacity: 0.5;
+    top: 5.5px;
+    left: 7.5px;
+}
+.ProfilAddDivInps{
+    position: relative;
+}
+#ProfilBthAddAdd{
+    margin: 25px;
+    width: 150px;
+    height: 75px;
+    font-size: 20px;
+    transition: opacity 0.3s ease-in-out;
+}
+#ProfilAddAdd{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex; 
+}
+#ProfilAddMain{
+    display: flex;
+    flex-direction: column;
+    padding-top: 5px;
+}
+#ProfilAddMain span{
+    flex-shrink: 0;
+}
+#PrfilMatch{
+    margin: 25px 0px;
+    overflow-y: auto;
+    max-height: 345px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+#PrfilMatch::-webkit-scrollbar {
+    width: 10px; /* Ширина вертикальной полосы */
+    height: 10px; /* Высота горизонтальной полосы */
+}
+/* Цвет фона полосы прокрутки */
+#PrfilMatch::-webkit-scrollbar-track {
+    background: var(--main-bg); /* Цвет фона */
+}
+/* Цвет ползунка (скроллбара) */
+#PrfilMatch::-webkit-scrollbar-thumb {
+    background-color: var(--main-bg); 
+    border-radius: 6px; /* Закругление углов */
+    border: 2px solid var(--main-bg); /* Полоса вокруг ползунка */
+    transition: background-color 0.2s ease-in-out;
+}
+/* Изменение цвета при наведении */
+#PrfilMatch::-webkit-scrollbar-thumb:hover {
+    background-color: var(--shadow); 
+}
+.ProfilAddRadio{
+    z-index: 10;
+    opacity: 0;
+    width: 25px;
+    height: 25px;
+    flex-shrink: 0;
+}
+.ProfilAddRadio:focus{
+    box-shadow: none;
+}
+.checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border); /* Красная рамка */
+    border-radius: 4px;    /* Закругленные углы (если нужно) */
+    background-color: transparent; /* Прозрачный фон */
+    display: inline-block;
+    position: relative;
+    right: 27.2px;
+    top: 1px;
+    transition: all 0.3s ease;
+}
+
+/* Галочка при выборе */
+.ProfilAddRadio[type="radio"]:checked + .checkmark::after {
+    content: "✓"; /* Символ галочки */
+    color: var(--black); /* Черный цвет */
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Добавляем hover-эффект */
+.checkmark:hover {
+    border-color: var(--shadow); /* Темно-красный цвет при наведении */
+}
+#ProfilAddDivMain{
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    align-items: center;
+    position: relative;
+}
+#ProfilAddDivMain::after{
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    opacity: 0.3;
+    background-color: var(--black);
+    bottom: 0px;
+}
+#ProfilDivButtonAdd{
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    width: 100%;
+    justify-content: center;
+    padding: 5px 0px;
+}
+#ProfilButtonAdd{
+    width: 100px;
+    height: 50px;
+    font-size: 16px;
+}
+#ProfilDelImgs{
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    opacity: 0.8;
+}
+.loginError{
+    border-color: red;
+    background-color: rgb(255, 122, 122);
+    box-shadow: 0 0 15px rgba(255, 0, 85, 0.826);
+}
+/* .message-box {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    color: var(--white);
+    background-color: red;  Красный фон для ошибок 
+    text-align: center;
+} */
+#DivError{
+    width: 100%;
+    height: 50px;
+}
+.ProfilInvisibolImg{
+    display: none;
+}
+.ProfilForPhone{
+    display: flex;
+    transition: color 0.5s ease-in-out, background 0.5s ease-in-out;
+}
+#ProfilLeftFavorites{
+    opacity: 0;
+    display: none;
+    transition: opacity 0.5s ease-in-out;
+    position: absolute;
+}
+.product-card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-height: 566px;
+    transition: all 0.3s ease;  
+} 
+.product-image{
+    width: 100%;
+    background-color: var(--add-bg);
+    border-radius: 3px;
+}
+.Con2Icon{
+    width: 25px;
+    height: 25px;
+    position: relative;
+    top: 10px;
+}
+.BthInfo{
+    position: relative;
+    left: 5px;
+    transition: color 0.3s ease-in-out;
+}
+.DivInfo{
+    display: flex;
+    flex-direction: row;
+}
+.DivInfo:hover .BthInfo{
+    color: var(--shadow);
+}
+.test{
+    position: relative;
+}
+.product-title{
+    height: 50px;
+    position: relative;
+    margin: 10px 0px 0px 0px;
+}
+.productFotos{
+    position: absolute;
+    width: 250px;
+    aspect-ratio: 1 / 1;
+    opacity: 0;
+    display: none;
+    border-radius: 3px;
+}
+#ProfilLeftFavoritess{
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    width: 90%;
+    transition: opacity 0.5s ease-in-out;
+}
+#prodilGridCardd{
+    overflow-x: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+#prodilGridCardd::-webkit-scrollbar {
+    width: 10px; /* Ширина вертикальной полосы */
+    height: 10px; /* Высота горизонтальной полосы */
+}
+/* Цвет фона полосы прокрутки */
+#prodilGridCardd::-webkit-scrollbar-track {
+    background: var(--main-bg); /* Цвет фона */
+}
+/* Цвет ползунка (скроллбара) */
+#prodilGridCardd::-webkit-scrollbar-thumb {
+    background-color: var(--main-bg); 
+    border-radius: 6px; /* Закругление углов */
+    border: 2px solid var(--main-bg); /* Полоса вокруг ползунка */
+    transition: background-color 0.2s ease-in-out;
+}
+/* Изменение цвета при наведении */
+#prodilGridCardd::-webkit-scrollbar-thumb:hover {
+    background-color: var(--shadow); 
+}
+#prodictObertka2{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 0px 15px;
+}
+#prodictObertka2::after{
+    content: "";
+    position: absolute;
+    z-index: 100;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background-color: var(--main-bg);
+    pointer-events: none;
+    box-shadow: 0px 0px 5px 25px var(--main-bg);
+    transition: color 0.5s ease-in-out, background 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+.productImg1{
+    opacity: 1;
+    display: flex;
+}
+#productNoProduct{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+#productNoProduct h1{
+    text-align: center;
+}
+@media screen and (max-height: 920px) {
+    #ProfilBody{
+        position: relative;
+        width: 100vw;
+        height: auto;
+        display: flex;
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 1200px) {
+    #ProfilInpsPass{
+        position: relative;
+        flex-direction: column;
+        align-items: start;
+        gap: 25px;
+        height: 174px;
+    }
+    #ProfilChangeInfoButton{
+        font-size: 1.5rem;
+    }
+}
+@media screen and (max-width: 860px) {
+    #ProfilAddDivBth{
+        margin-top: 25px;
+    }
+    .ProfilAddInp{
+        height: 40px;
+        width: 88%;
+        font-size: 20px;
+    }
+    #ProfilAddSplit{
+        display: none;
+        grid-template-rows: 70% 30%;
+        grid-template-columns: 100%;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+    #ProfilAddDivMain{
+        height: 150px;
+    }
+    #ProfilMainPass{
+        height: 304px;
+    }
+    #ProfilBthPass{
+        padding: 25px;
+        position: relative;
+    }
+    .ProfilInpPass{
+        width: 100%;
+    }
+    #ProfilBth{
+        width: 150px;
+        height: 75px;
+        font-size: 20px;
+    }
+    .ProfilTextInp{
+        width: 90%;
+    }
+    #ProfilChangeInfoDivButton{
+        margin-top: 25px;
+    }
+    #ProfilChangeInfoButton{
+        width: 150px;
+        height: 75px;
+        font-size: 20px;
+    }
+    .ProfilInfo{
+        gap: 20px;
+    }
+    .ProfilChangeInfoInp{
+        width: 88%;
+    }
+    #ProfilSplit{
+        display: flex;
+        flex-direction: column;
+    }
+    .ProfilForPhone{
+        display: none;
+    }
+    .ProfilTitle{
+        text-align: center;
+    }
+    #ProfilBody{
+        position: relative;
+        width: 100vw;
+        height: auto;
+        display: flex;
+        justify-content: center;
+    }
+    .ProfilInvisibolImg{
+        display: block;
+    }
+    #ProfilMenu{
+        grid-template-columns: 15% 85%;
+    }
+    #ProfilMenuRight::before{
+        display: none;
+    }
+    .ProfilMenuItem{
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    #ProfilMenuRight{
+        justify-self: center;
+        width: 50px;
+    }
+    #ProfilLeftProfil{
+        width: 80%;
+    }
+    #ProfilMenuLeft{
+        margin: 0px 15px 0px 15px;
+    }
+}
+@media screen and (max-width: 630px) {
+    .ProfilEdit{
+        display: none;
+    }
+    .product-card{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        max-height: 366px;
+        transition: all 0.3s ease;  
+    } 
+}

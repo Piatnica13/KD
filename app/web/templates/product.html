@@ -1,0 +1,197 @@
+{% extends "base.html" %} {% block title %}
+<title>
+  {{ product.name }} — KoDee Desire - БРАСЛЕТЫ ЖЕЛАНИЙ | ЗОЛОТО 585 ПРОБЫ |
+  КОЛЬЕ НА ЛЕСКЕ | КАРАГАНДА
+</title>
+<meta name="csrf_token" content="{{ csrf_token() }}" />
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "{{ product.name }}",
+    "image": "{{ product.image() }}",
+    "description": "{{ product.descriptions}}",
+    "brand": {
+      "@type": "Brand",
+      "name": "KoDee Desire"
+    },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "KZT",
+      "price": "{{ product.price }}",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+</script>
+
+{% endblock %} {% block style %}
+<link rel="stylesheet" href="/static/css/product.css" />
+{% endblock %} {% block body%}
+<section id="productBody">
+  <section class="div100px"></section>
+  <section id="productMainDiv">
+    <article id="productImgsDiv">
+      <div id="productGalochkas">
+        <img
+          src="/static/icon/black/galochka.png"
+          style="width: 50px; height: 50px"
+          alt="Назад"
+          id="profilGalochka1"
+          data-icon="galochka.png"
+        />
+        <img
+          src="/static/icon/black/galochka.png"
+          style="width: 50px; height: 50px"
+          alt="Вперед"
+          id="profilGalochka2"
+          data-icon="galochka.png"
+        />
+      </div>
+      {% for image in product.images %}
+      <img
+        src="{{ image.img1 }}"
+        class="productFotos"
+        alt="Продукция"
+        id="productImg{{ image.num }}"
+      />
+      {% endfor %}
+    </article>
+    <article id="productMenuDiv">
+      <div id="productMenuUp">
+        <h1 style="font-size: 1.5rem">{{ product.name }}</h1>
+        <h2 style="font-size: 0.83em; opacity: 0.7">{{ product.id }}</h2>
+        <h2>{{ product.price }}&#8376;</h2>
+      </div>
+      <div id="productMenuMidle">
+        <div id="productDivSize">
+          <div id="productDivPodSize">
+            <div id="productDivHowSize">
+              <div id="productHowSize">
+                <a href="/help/size" id="productSizeA">
+                  <h3>Как определить размер?</h3>
+                  <img
+                    src="/static/icon/black/question.png"
+                    style="width: 25px; height: 25px"
+                    alt="Вопрос"
+                    data-icon="question.png"
+                  />
+                </a>
+              </div>
+              <h2>Размер</h2>
+            </div>
+            <div id="productChooseSize">
+              <select id="productSize" class="productSelects">
+                <option>Меньше 12 см</option>
+                <option>12-14 см</option>
+                <option>15-16 см</option>
+                <option>17-18 см</option>
+                <option>Больше 18 см</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div id="productDivMaterial" class="productInputs">
+          <h2>Материал изделия</h2>
+          <select id="productMaterial" class="productSelects">
+            <option>Золото 585 (Красное)</option>
+            <option>Серебро 925</option>
+            <option>Золото 585 (Белое)</option>
+            <option>Золото 585 (Жёлтое)</option>
+          </select>
+        </div>
+        <div id="productDivColor" class="productInputs">
+          <h2>Цвет нити</h2>
+          <select id="productColor" class="productSelects">
+            <option>Красный</option>
+            <option>Черный</option>
+          </select>
+        </div>
+        <div id="productDivSaleBth">
+          <div id="productHeard">
+            <img
+              src="/static/icon/black/heart.png"
+              alt="Нравиться"
+              class="productHeardImgs"
+              id="productLike"
+              data-icon="heart.png"
+              data-name="{{ user.name }}"
+            />
+            <img
+              src="/static/icon/black/blackHeart.png"
+              alt="Поставить Нравиться"
+              class="productHeardImgs"
+              id="productGetLike"
+              data-icon="blackHeart.png"
+            />
+            <input type="hidden" id="d" value="{{ product.id }}" />
+            <input type="hidden" id="f" value="{{ favarite }}" />
+            <input type="hidden" id="b" value="{{ basket }}" />
+          </div>
+          <div id="productDivBth">
+            <button id="productBth" onclick="urlBth('{{user.name}}')">
+              Добавить
+            </button>
+          </div>
+        </div>
+        <div id="CharactersRight">
+          <section id="productDescriptions">
+            <h2>Описание</h2>
+            <p style="font-size: 1.25rem">{{ product.descriptions }}</p>
+          </section>
+          <section id="productCharacter">
+            <div id="productAllCharacter">
+              <article class="DivsCharacters">
+                <h3>Артикул</h3>
+                <p>{{ product.id }}</p>
+              </article>
+              <article class="DivsCharacters">
+                <h3>Вес</h3>
+                <p>&#8776;{{ product.weight }}</p>
+              </article>
+              <article class="DivsCharacters">
+                <h3>Концепция</h3>
+                <p>{{ product.concept}}</p>
+              </article>
+              <article class="DivsCharacters">
+                <h3>Категория</h3>
+                <p>{{ product.category }}</p>
+              </article>
+            </div>
+          </section>
+        </div>
+      </div>
+    </article>
+  </section>
+  <section id="CharactersBottom">
+    <article id="productDescriptions">
+      <h2>Описание</h2>
+      <h3 style="font-size: 1.25rem">{{ product.descriptions }}</h3>
+    </article>
+    <article id="productCharacter">
+      <h2>Характеристики</h2>
+      <div id="productAllCharacter">
+        <article>
+          <h3>Артикул</h3>
+          <p>{{ product.id }}</p>
+        </article>
+        <article>
+          <h3>Вес</h3>
+          <p>&#8776;{{ product.weight }}&nbsp;гр</p>
+        </article>
+        <article>
+          <h3>Концепция</h3>
+          <p>{{ product.concept}}</p>
+        </article>
+        <article>
+          <h3>Категория</h3>
+          <p>{{ product.category }}</p>
+        </article>
+      </div>
+    </article>
+  </section>
+  <section id="productPodDiv"></section>
+</section>
+{% endblock %} {% block script %}
+<script src="/static/js/product.js"></script>
+{% endblock %}

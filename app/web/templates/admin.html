@@ -1,0 +1,32 @@
+{% extends "base.html" %} {% block title %}
+<title>Админ панель Kodee</title>
+{% endblock %} {% block style %}
+<link rel="stylesheet" href="/static/css/admin.css" />
+{% endblock %} {% block body %}
+<div class="div100px"></div>
+<form id="product_form">
+    <h1>Добавить изображения</h1>
+    <input type="text" name="productName" id="productName"/>
+    <div id="prodcutUploadDiv">
+        <div class="productUploadDivs">
+            <label for="adminUpload1">Загрузить фото</label>
+            <input id="adminUpload1" type="file" name="img1" />
+        </div style="position: relative">
+        <div class="productUploadDivs">
+            <label for="adminUpload2">Загрузить фото</label>
+            <input id="adminUpload2" type="file" name="img2" />
+        </div>
+        <div class="productUploadDivs">
+            <label for="adminUpload3">Загрузить фото</label>
+            <input id="adminUpload3" type="file" name="img3" />
+        </div>
+        <div class="productUploadDivs">
+            <label for="adminUpload4">Загрузить фото</label>
+            <input id="adminUpload4" type="file" name="img4" />
+        </div>
+    </div>
+    <button id="adminAddImgsBth" type="submit">Добавить фотки</button>
+</form>
+{% endblock %} {% block script %}
+<script src="/static/js/admin.js" defer></script>
+{% endblock script %}

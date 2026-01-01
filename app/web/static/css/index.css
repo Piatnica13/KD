@@ -1,0 +1,727 @@
+html, body{
+    position: relative;
+    background-color: var(--main-bg);
+}
+/*1 Contener*/
+#Contener1{
+    position: relative;
+    display: flex;
+    background-color: var(--add-bg);
+    opacity: 1;
+    z-index: 0;
+    overflow: hidden;
+    justify-content: center;
+    transition: color 0.5s ease-in-out, background 0.5s ease-in-out;
+}
+#Con1Img{
+    width: 50%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: row;
+    z-index: -1;
+}
+.Con1imgs{
+    width: 1000px;
+    height: 100%;
+    max-width: 100%;
+}
+#Con1Text{
+    z-index: 1;
+    display:flex;
+    flex-direction: column;
+    width: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px;
+    background-color: var(--add-bg);
+}
+#text1{
+    font-size: 35px;
+    font-family: "Felidae-Regular", sans-serif !important;
+}
+#text2{
+    margin-bottom: 25px;
+    font-size: 25px;
+    font-family: "Felidae-Regular", sans-serif !important;
+}
+/*2 Contener*/
+#Contener2 {
+    padding: 50px 0;
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Пусть слайдер занимает всю высоту */
+    overflow: hidden; /* Скрываем всё, что выходит за пределы слайдера */
+    background-color: var(--main-bg);
+    transition: color 0.5s ease-in-out, background 0.5s ease-in-out;
+}
+.Con2DivImg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.SliderImgs {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Подгоняем изображения под размер контейнера */
+    transition: opacity 1s ease-in-out;
+}
+.Con2ImgsText{
+    position: absolute;
+    bottom: 200px; /* Расположить текст снизу */
+    left: 50%; /* Центруем по горизонтали */
+    transform: translateX(-50%) translateY(20px); /* Исправляем смещение */
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out, transform 0.8s ease-in-out;
+    color: black;
+}
+
+.OverlayTitle {
+    font-size: 24px;
+    margin: 0;
+}
+
+.OverlayText {
+    font-size: 16px;
+    margin: 0;
+}
+/*Контейнер 3*/
+#Contener3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 50px 0 25px 0;
+    width: 100%;
+    background-color: var(--main-bg);
+    transition: color 0.5s ease-in-out, background 0.5s ease-in-out;
+
+}
+.con3a{
+    text-decoration: none;
+}
+#con3catalogDiv{
+    width: 100%; 
+    background: var(--main-bg); 
+    display: flex; 
+    justify-content: center; 
+    padding: 0 0 25px 0;
+}
+#con3more, #con3catalog{
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+}
+.Con3grup2, .Con3grup1{
+    max-width: 1100px;
+    width: 80%;
+    max-height: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+.Con3grup1{
+    overflow: hidden;
+    border-radius: 5px 5px 5px 5px;
+    position: relative;
+    right: 50px;
+}
+.Con3grup2{
+    overflow: hidden;
+    border-radius: 5px 5px 5px 5px;
+    position: relative;
+    left: 50px;
+}
+.Con3Imgs{
+    transition: opacity 0.4s ease-in-out;
+    width: auto;
+    max-height: 200px;
+    aspect-ratio: 1 / 1;
+}
+.con3Btn {
+    text-align: center;
+    display: inline-block;
+    padding: 15px 40px;
+    border: 1px solid var(--add-bg);
+    cursor: pointer;
+    letter-spacing: 2px;
+    position:relative;
+    overflow:hidden;
+    margin: 0 20px;
+}
+  
+.con3Btn:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0;
+    background : var(--add-bg);
+    left: 0;
+    bottom: 0;
+    transition: all .3s;
+    opacity: 0.3;
+}
+  
+.con3Btn:hover:before {
+    width: 100%;
+}
+.Con3Divs{
+    background-color: var(--add-bg);
+    transition: background 0.5s ease-in-out, color 0.5s ease-in-out, opacity 0.4s ease-in-out;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.Con3Divs h5, h3{
+    margin: 4px;
+}
+.Con3Text{
+    font-size: 1.3rem;
+}
+/*Контейнер 4*/
+#Contener4{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; 
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+}
+#Contener4::before {
+    content: '';
+    position: absolute;
+    inset: 0; /* top:0; left:0; width:100%; height:100% */
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url(/static/image/con4/33784.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+#Con4Part1{
+    gap: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 100px 0px;
+}
+.Con4Divs{
+    min-width: 250px;
+    width: 300px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px black;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.Con4Imgs{
+    z-index: 0;
+    position: relative;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.7;
+    transition: opacity .2s ease-out;
+    border-radius: 20px;
+}
+.Con4Text{
+    position: relative;
+    margin: 20px 20px;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    transition: color 0.2s ease-in-out;
+
+}
+.Con4TextGl{
+    font-size: 2.2rem;
+}
+.Con4TextVt{
+    padding-top: 10px;
+    font-size: 1.3rem;    
+}
+.ConLastLogo{
+    width: 135px;
+}
+.TestImgs{
+    min-width: 100px;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+.Tests{
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: var(--add-bg);
+}
+#ConLast2{
+    margin: 50px 0px;
+}
+.con3ImgShow{
+    opacity: 0;
+    display: none;
+}
+.con4galochka{
+    opacity: 0;
+    display: none;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Contener 5 */
+#Contener5{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--main-bg);
+    transition: color 0.5s ease-in-out, background 0.5s ease-in-out;
+    padding-top: 25px;
+}
+#con5con{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    justify-content: center;
+}
+#con5grid{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    flex-direction: column;
+    max-width: 550px;
+    margin: auto;
+}
+.con5Divs{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    width: auto;
+    height: 275px;
+}
+.con5Text{
+    font-size: 1.4rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.con5Imgs{
+    aspect-ratio: 1 / 1;
+    max-width: 200px;
+    border-radius: 5px;
+}
+#con5img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#con5textImg{
+    position: absolute;
+    top: 50px;
+    text-align: center;
+    width: 400px;
+    font-size: 1.5rem;
+    color: black;
+}
+.con5divImgs{
+    color:var(--black); 
+    text-decoration: none; 
+    display: flex; 
+    align-items: center; 
+    flex-direction: column;
+    height: 275px;
+}
+
+/* Contener6 */
+
+.Contener6{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 25px 0 0 0;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--main-bg);
+    transition: color 0.5s ease-in-out, background 0.5s ease-in-out;
+}
+
+#con6wrapper{
+    display: flex;
+    animation: contener6 60s linear infinite;
+}
+.Contener6:active{
+    #con6wrapper{
+        animation-play-state: paused;
+    }
+}
+.con6Divs{
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 80%;
+    max-width: 400px;
+    height: 100%;
+    flex-shrink: 0;
+    padding: 0px 20px;
+}
+.con6head{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    align-items: center;
+}
+.con6imgs{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.con6name{
+    font-size: 1.2rem;
+    margin: 0 10px 0 0;
+}
+.con6main{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    width: 400px;
+}
+@keyframes contener6 {
+    0% {
+        transform: translateZ(0);
+    }
+    100% {
+        transform: translate3d(-33.333333%, 0, 0);
+    }
+}
+/* Contener 7 */  
+.con7wrapper {
+    position: sticky;
+    top: 0;
+    height: calc(100vh - 100px);
+    width: 100%;
+    overflow: hidden;
+    background: var(--main-bg);
+    display: grid;
+    justify-content : center;
+    align-items: center;
+    grid-template-rows: 33% 33% 33%;
+    grid-template-columns: 100%;
+    transition: background-color 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+.con7images {
+    position: relative;
+    height: 100%;
+    max-width: 300px;
+    opacity: 1;
+    aspect-ratio: 1 / 1;
+}
+#image1{
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#image2{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    opacity: 0;
+    top: -30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#image3{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    opacity: 0;
+    top: -60px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.con7icons {
+    position: absolute;
+    animation: floatIcon 8s ease-in-out infinite;
+    opacity: 0.6 !important;
+}
+
+/* Contener8 */
+#Contener8{
+    width: 100%;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-bg);
+    transition: color 0.5s ease-in-out, background 0.5s ease-in-out;
+}
+#con8wrap{
+    width: 100%;
+    max-width: 700px;
+}
+#con8title{
+    text-align: center;
+}
+#con8div{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    gap: 25px;
+}
+.con8divs{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    height: 100%;
+
+}
+.con8text{
+    position: absolute;
+    top: 25px;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 50px;
+    color: rgb(255, 255, 255);
+    
+}
+.con8imgs{
+    width: 100%;
+    border-radius: 5px;
+}
+.con8bthDiv{
+    color: var(--black); 
+    width: 100%; 
+    position: absolute; 
+    bottom: 0;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    text-decoration: none;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+}
+@keyframes floatIcon {
+    0%   { transform: translateY(25px) rotate(-25deg) scale(1.3); }
+    50%  { transform: translateY(-25px) rotate(25deg) scale(1); }
+    100% { transform: translateY(25px) rotate(-25deg) scale(1.3); }
+}
+@media screen and (max-width: 1300px) {
+    #Con4Part1{
+        gap: 15px;
+        padding: 30px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    #con5con{
+        display: flex;
+    }
+    #con5img{
+        display: none;
+    }
+}
+@media screen and (max-width: 767px) {
+    #Contener1{
+        flex-direction: column;
+    }
+    #Con1Img{
+        width: 100%;
+    }
+    #Con1Text{
+        width: 100%;
+    }
+    #Contener3{
+        padding: 25px 0 25px 0;
+    }
+    .Con3grup1, .Con3grup2{
+        left: 0px;
+        right: 0px;
+        width: 90%;
+    }
+    
+}
+@media screen and (max-width: 675px) {
+    #con4galochki{
+        width: 95%;
+        height: 100%;
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .con4galochka{
+        opacity: 1;
+        display: flex;
+        width: 25px;
+        height: 25px;
+        position: relative;
+    }
+    .con4circle{
+        z-index: 10;    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: var(--white);
+        opacity: 0.4;
+    }
+    
+    #Con4Part1{
+        max-width: 90vw;
+        flex-wrap: nowrap;
+        /* auto */
+        overflow-x: hidden; 
+        padding: 20px 20px 20px 20px;
+        gap: 25px;
+        scrollbar-width: none; /* Firefox */
+        justify-content: start;
+        scroll-behavior: smooth;
+    }
+    
+    .Con4Divs {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 625px) {
+    .con7iconsPh{
+        opacity: 0 !important;
+    }
+    #Contener2{
+        display: none;
+    }
+    #con5grid{
+        gap: 0px;
+    }
+    .con6Divs{
+    width: 100%;
+    max-width: 300px;
+    padding: 0px 20px;
+    }
+    .con6main{
+    width: 300px;
+    }
+    .con8text{
+    margin: 50px 25px;
+    }
+}
+@media screen and (max-width: 550px) {
+    .con8bth{
+       padding: 15px 0px;
+       margin: 5px;
+    }
+    .con8bthDiv{
+        height: 100px;
+    }
+    .con8text{
+        font-size: 1.2rem;
+    }
+}
+@media screen and (max-width: 450px) {
+    #text1{
+        padding: 10px;
+    }
+    .con5Imgs{
+        max-width: 100%;
+    }
+}
+@media screen and (max-width: 500px) {
+    .con8text{
+    margin: 0px;
+    }
+    #Contener3{
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-template-columns: 33.33% 33.33% 33.33%;
+        gap: 0px;
+        justify-items: center;
+    }
+    .con3a{
+        display: none;
+    }
+    .Con3Divs{
+        display: none;
+    }
+    .Con3Imgs{
+        border-radius: 5px;
+        width: 100%;
+    }
+    .Con3grup1, .Con3grup2{
+        width: 95%;
+        height: 95%;
+        max-height: none;
+        aspect-ratio: 1 / 1;
+        display: block;
+    }
+}
+@media screen and (min-width: 767px) {
+    .con7sticky {
+        position: relative;
+        height: 300vh; /* Высота больше экрана, чтобы было где скроллить */
+    }
+    .con7wrapper {
+        position: sticky;
+        top: 0;
+        height: calc(100vh - 100px);
+        width: 100%;
+        overflow: hidden;
+        background: var(--main-bg);
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        grid-template-rows: 100%;
+    }    
+    .con7images {
+        width: 100%;
+        height: auto;
+    }
+    #image1{
+        justify-content: center;
+        margin-top: 0px;
+    }
+    #image2{
+        justify-content: center;
+        top: 0px;
+        right: 25px;
+    }
+    #image3{
+        justify-content: center;
+        top: 0px;
+        right: 50px;
+    }
+}

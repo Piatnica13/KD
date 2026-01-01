@@ -1,0 +1,105 @@
+{% extends "baseForReg.html" %} {% block title %}
+<title>
+  Вход — KoDee Desire - БРАСЛЕТЫ ЖЕЛАНИЙ | ЗОЛОТО 585 ПРОБЫ | КОЛЬЕ НА ЛЕСКЕ |
+  КАРАГАНДА
+</title>
+{% endblock %} {% block style %}
+<link rel="stylesheet" href="/static/css/login.css" />
+{% endblock %} {% block body %}
+
+<!-- Обработчик сообщений -->
+{% with messages = get_flashed_messages(with_categories=true) %} {% if messages
+%} {% for category, message in messages %}
+<div class="message-box">{{ message }}</div>
+{% endfor %} {% endif %} {% endwith %}
+
+<section id="Contener">
+  <div id="Forma">
+    <a href="/">
+      <div id="ImgLogo">
+        <img
+          src="/static/icon/black/logo.png"
+          data-icon="logo.png"
+          alt="Kodee_Desire"
+          id="Logo"
+        />
+      </div>
+    </a>
+    <article>
+      <h1 id="MainText">ВХОД</h1>
+    </article>
+    <form
+      method="post"
+      id="loginForm"
+      action="/login/log_user"
+      autocomplete="on"
+    >
+      {{ form.hidden_tag() }}
+      <div id="UserInp">
+        <article class="ImgInp">
+          <img
+            src="/static/icon/black/mail.png"
+            alt="Email"
+            class="ImgInInput"
+          />
+          <input
+            autocomplete="email"
+            required
+            type="email"
+            placeholder="E-mail"
+            id="email"
+            name="email"
+            class="test"
+          />
+        </article>
+        <article class="ImgInp">
+          <img
+            src="/static/icon/black/pass.png"
+            alt="Password"
+            class="ImgInInput"
+          />
+          <input
+            type="password"
+            placeholder="Пароль"
+            autocomplete="current-password"
+            required
+            id="InpPass"
+            name="password"
+            class="test"
+          />
+          <img
+            src="/static/icon/black/hide.png"
+            alt="Hide Password"
+            id="Hide"
+            class="ImgPass"
+          />
+          <img
+            src="/static/icon/black/show.png"
+            alt="Show Password"
+            id="Show"
+            class="ImgPass"
+          />
+        </article>
+        <button id="ButtonSignIn" type="submit">Вход</button>
+      </div>
+    </form>
+    <div id="loginGoogleDiv">
+      <a href="/login/google"
+        ><button id="loginGoogleBth">
+          <img
+            src="/static/icon/static/google.png"
+            alt="Вход через Google"
+            id="loginGoogleImg"
+          /></button
+      ></a>
+    </div>
+    <div>
+      <p id="loginP">
+        Еще нет аккаунта? <a href="/register" id="LogIn">Регистрация</a>
+      </p>
+    </div>
+  </div>
+</section>
+{% endblock %} {% block script %}
+<script src="/static/js/login.js"></script>
+{% endblock %}

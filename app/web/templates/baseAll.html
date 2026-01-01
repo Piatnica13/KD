@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="/static/favicon.ico"
+      sizes="32x32"
+      type="image/x-icon"
+    />
+
+    <!-- Для Instagram (дополнительно) -->
+    <meta property="instagram:creator" content="@kodee_jewellery" />
+    <meta property="product:brand" content="KoDee Desire" />
+    <meta property="product:price:amount" content="49000" />
+    <meta property="product:price:currency" content="KZT" />
+
+    <!-- Для ВКонтакте специальные -->
+    <meta property="vk:image" content="/static/image/body/obedinenie.webp" />
+    <meta
+      name="keywords"
+      content="кулоны желаний, браслеты на нити, золото 585, Караганда, гравировка украшений"
+    />
+
+    <!-- Обязательные для всех -->
+
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://kodee.kz/" />
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta
+      property="og:title"
+      content="KoDee Desire — авторские ювелирные украшения в Караганде"
+    />
+    <meta property="og:site_name" content="KoDee Desire" />
+    <meta
+      property="og:description"
+      content="🔮 KoDee Desire — не просто украшения, а проводники ваших желаний. Авторские кулоны из золота 585 и серебра 925 с энергетикой ручной работы. Каждое изделие создается в Караганде с намерением на исполнение мечты. Попробуйте магию ювелирного искусства!"
+    />
+    <meta property="og:image" content="/static/image/body/obedinenie.webp" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="kz_KZT" />
+    <meta property="og:url" content="https://kodee.kz/" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="KoDee Desire — ювелирные изделия, браслеты желаний"
+    />
+    <meta name="twitter:image" content="/static/image/body/obedinenie.webp" />
+    <meta
+      name="twitter:description"
+      content="Авторские кулоны из золота и серебра с индивидуальной гравировкой в Караганде"
+    />
+
+    <!-- Гео-метатеги -->
+    <meta name="geo.region" content="KZ-KAR" />
+    <meta name="geo.placename" content="Караганда" />
+    <meta name="geo.position" content="49.803763;73.103562" />
+    <meta name="ICBM" content="49.803763, 73.103562" />
+
+    <script>
+      const savedTheme = localStorage.getItem("theme") || "light";
+
+      document.documentElement.dataset.themee = savedTheme;
+
+      const themee =
+        savedTheme === "light"
+          ? {
+              "--main-bg": "#fffaf5",
+              "--add-bg": "#e5d7cc",
+              "--black": "#3a3a3a",
+              "--white": "#000",
+              "--grey": "#b8ada6",
+              "--border": "#decabc",
+              "--shadow": "#f2e0d5",
+              "--gradient":
+                "linear-gradient(145deg, #f7eee7, #fffaf5, #f1e8dd)",
+              "--main-footer": "#e5d7cc",
+              "--add-footer": "#d2c2b5",
+            }
+          : {
+              "--main-bg": "#2e2e2e",
+              "--add-bg": "#3e3e3e",
+              "--black": "#ffffff",
+              "--white": "#ffffff",
+              "--grey": "#999999",
+              "--border": "#5a5a5a",
+              "--shadow": "#1a1a1a",
+              "--gradient": "linear-gradient(145deg, #383838, #2e2e2e)",
+              "--main-footer": "#1c1c1c",
+              "--add-footer": "#292929",
+            };
+
+      for (let key in themee) {
+        if (key.startsWith("--")) {
+          document.documentElement.style.setProperty(key, themee[key]);
+        }
+      }
+    </script>
+    <style>
+      html {
+        background-color: var(--main-bg);
+        color: var(--white);
+        transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+      }
+
+      body {
+        margin: 0;
+        background-color: var(--main-bg);
+        color: var(--white);
+        transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+        font-family: sans-serif;
+      }
+    </style>
+    {% block title %} {% endblock %} {% block titlee %}{% endblock %}
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-K2TX71HYVP"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-K2TX71HYVP");
+    </script>
+    <!-- Google tag -->
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+      (function (m, e, t, r, i, k, a) {
+        m[i] =
+          m[i] ||
+          function () {
+            (m[i].a = m[i].a || []).push(arguments);
+          };
+        m[i].l = 1 * new Date();
+        for (var j = 0; j < document.scripts.length; j++) {
+          if (document.scripts[j].src === r) {
+            return;
+          }
+        }
+        (k = e.createElement(t)),
+          (a = e.getElementsByTagName(t)[0]),
+          (k.async = 1),
+          (k.src = r),
+          a.parentNode.insertBefore(k, a);
+      })(
+        window,
+        document,
+        "script",
+        "https://mc.yandex.ru/metrika/tag.js",
+        "ym"
+      );
+
+      ym(101431606, "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true,
+        ecommerce: "ShopGrid",
+      });
+    </script>
+    <noscript
+      ><div>
+        <img
+          src="https://mc.yandex.ru/watch/101431606"
+          style="position: absolute; left: -9999px"
+          alt=""
+        /></div
+    ></noscript>
+    <!-- /Yandex.Metrika counter -->
+  </head>
+
+  <body>
+    <section id="theme">
+      <div
+        style="
+          width: 50px;
+          height: 50px;
+          position: fixed;
+          bottom: 15%;
+          right: 10%;
+          z-index: 1005;
+          border-radius: 50%;
+          background-color: var(--add-bg);
+          display: none;
+          justify-content: center;
+          align-items: center;
+          box-shadow: 0 0 15px var(--grey);
+          transition: background 0.5s ease-in-out;
+        "
+        ,
+        id="switchTheme"
+      >
+        <img
+          src="/static/icon/black/sun.png"
+          style="width: 35px; height: 35px; position: absolute"
+          alt="Светлая тема"
+          id="bthLight"
+        />
+        <img
+          src="/static/icon/white/moon.png"
+          style="width: 35px; height: 35px; position: absolute"
+          alt="Темная тема"
+          id="bthDark"
+        />
+      </div>
+    </section>
+
+    <section id="divMessegeBox"></section>
+
+    {% block bodyy %} {% endblock %}
+  </body>
+</html>
