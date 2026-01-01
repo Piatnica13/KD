@@ -2,6 +2,7 @@ from flask import request, Blueprint, Response
 from telebot import types
 from dotenv import load_dotenv
 from app.__init__ import csrf
+import json
 import app.bot.bot.bot as bot
 import os
 
@@ -16,9 +17,7 @@ bp_bot = Blueprint("bot", __name__, url_prefix="/api")
 @csrf.exempt
 def webhook() -> Response:
     json_str = request.get_data().decode('utf-8')
-    
-    print(json_str)
-    
+    update_dict = json.loads(json_str)
     update = types.Update.de_json(json_str)
     bot.bot.process_new_updates([update])
         
