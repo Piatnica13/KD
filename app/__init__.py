@@ -63,7 +63,7 @@ def create_app() -> Flask:
 
 
     # CSRF Безопасность
-    csrf.init_app(app)
+    # csrf.init_app(app)
     app.logger.info("CSRF настроено")
 
     
