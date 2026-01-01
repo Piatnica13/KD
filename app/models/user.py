@@ -1,5 +1,5 @@
 from ..core.database import db
-from sqlalchemy import JSON
+from sqlalchemy import JSON, BigInteger
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -16,7 +16,7 @@ class User(db.Model):
 
     name_tg = db.Column(db.String)
     first_name_tg = db.Column(db.String)
-    id_tg = db.Column(db.Integer)
+    id_tg = db.Column(BigInteger, unique=True, index=True)
     role = db.Column(db.String)
     
     def __init__(self, name: str | None = None, email: str | None = None, password: str | None = None, name_tg: str | None = None, first_name_tg: str | None = None, id_tg: int | None = None, role: str | None = None):

@@ -4,7 +4,7 @@ from telebot import types
 
 class ProductService:
     def get_all(self) -> Product | None:
-        return Product.query.all()
+        return Product.query.order_by(Product.id.asc()).all()
     
     def get_by_id(self, id: int) -> Product | None:
         return Product.query.filter_by(id=id).first()
