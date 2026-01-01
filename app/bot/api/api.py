@@ -16,6 +16,9 @@ bp_bot = Blueprint("bot", __name__, url_prefix="/api")
 @csrf.exempt
 def webhook() -> Response:
     json_str = request.get_data().decode('utf-8')
+    
+    print(json_str)
+    
     update = types.Update.de_json(json_str)
     bot.bot.process_new_updates([update])
         

@@ -27,9 +27,11 @@ def start_bot(app: Flask) -> None:
 
     @bot.message_handler(commands=['start'])
     def start(msg) -> None:
+        print('start')
         try:
             with app.app_context():
                 UserService.reg(msg)
+                print(532)
             bot_service.callback_menu(msg)
         except Exception as e:
             bot.send_message(chat_id=msg.chat.id, text=f"Ошибка start: {e}")
