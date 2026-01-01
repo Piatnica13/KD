@@ -6,9 +6,7 @@ from dotenv import load_dotenv
 from .core.database import db
 from .core.config import ProductionConfig
 from .core.logging import setup_logging
-from .core.instances import instances_product
 from .web.admin.admin import admin
-from .web.services.user import UserService
 from .web.routes.routes import bp_web
 from .bot.bot.bot import start_bot
 import app.bot.api.api as api
@@ -83,15 +81,6 @@ def create_app() -> Flask:
     
     # Запуск бота
     start_bot(app)
-    
-    # Создание базы данных
-    with app.app_context():
-        db.create_all()
-        instances_product(db=db, app=app)
-        # СОЗДАЕМ АДМИН АККАУНТ
-        UserService.add_admin()
-    
-    
     
     return app
 

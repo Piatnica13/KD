@@ -11,5 +11,5 @@ class BaseConfig:
     SESSION_COOKIE_SAMESITE = 'Lax'
 
 class ProductionConfig(BaseConfig):
-    DEBUG = True
+    DEBUG = False
     SQLALCHEMY_DATABASE_URI = os.getenv("POSTGRESSQL") or "sqlite:///KD.db"
