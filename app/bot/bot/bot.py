@@ -12,7 +12,7 @@ import os
 load_dotenv(".password.env")
 TOKEN = os.getenv("BOT_TOKEN")
 
-bot = TeleBot(TOKEN)
+bot = TeleBot(TOKEN, threaded=False)
 
 product_service = ProductService()
 
